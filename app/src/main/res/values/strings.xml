@@ -5,4 +5,17 @@
     <string name="str_forget_password">忘记密码？</string>
     <string name="str_nul">暂无</string>
     <string name="str_add">新增</string>
+
+    <string name="str_title_modify_pwd">修改密码</string>
+    <string name="str_pwd_old">旧密码：</string>
+    <string name="str_pwd_new">新密码：</string>
+    <string name="str_pwd_confirm">确认密码：</string>
+    <string name="str_pwd_hint_old">请输入旧密码</string>
+    <string name="str_pwd_hint_new">请输入新密码</string>
+    <string name="str_pwd_hint_confirm">请再次输入新密码</string>
+    <string name="str_pwd_hint">注：新密码需为6-20位字母或数字</string>
+    <string name="str_save">保存</string>
+
+    <string name="tips_default_loading">正在加载，请稍后...</string>
+    <string name="tips_is_committing">正在提交,请稍后...</string>
 </resources>
