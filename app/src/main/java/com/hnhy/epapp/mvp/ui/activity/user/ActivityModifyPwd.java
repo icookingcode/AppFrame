@@ -100,10 +100,10 @@ public class ActivityModifyPwd extends BaseActivity implements ContractModifyPwd
             return false;
         }
         // TODO: 2018/9/11 delay handle
-//        if (!Utils.isMatch(Constant.REGEX_PASSWORD2, mNewPwd)) {
-//            ToastUtils.showShort("密码格式不对，请输入6-20位字母或数字组合");
-//            return false;
-//        }
+        if (!FrameworkUtils.isMatch("^\\w{6,20}$", mNewPwd)) {
+            FrameworkUtils.Toast.showShort("密码格式不对，请输入6-20位字母或数字组合");
+            return false;
+        }
         return true;
     }
 

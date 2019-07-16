@@ -9,7 +9,6 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.content.res.Resources;
-import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Point;
 import android.net.ConnectivityManager;
@@ -45,6 +44,7 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
+import java.util.regex.Pattern;
 
 public class FrameworkUtils {
 
@@ -100,6 +100,17 @@ public class FrameworkUtils {
             fileUri = Uri.fromFile(file);
         }
         return fileUri;
+    }
+
+    /**
+     * 判断是否匹配正则
+     *
+     * @param regex 正则表达式
+     * @param input 待匹配字符串
+     * @return true：匹配，false：不匹配
+     */
+    public static boolean isMatch(final String regex, final CharSequence input) {
+        return input != null && input.length() > 0 && Pattern.matches(regex, input);
     }
     /**
      * 强制类型转换
