@@ -35,7 +35,6 @@ public class ActivityModifyPwd extends BaseActivity implements ContractModifyPwd
     private PresenterModifyPwd mPresenter;
     private String mOldPwd;
     private String mNewPwd;
-    private String mNewPwdConfirm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,9 +72,10 @@ public class ActivityModifyPwd extends BaseActivity implements ContractModifyPwd
     /**
      * 检查参数是否合格
      *
-     * @return
+     * @return true ：通过 false:不通过
      */
     private boolean checkValid() {
+        String mNewPwdConfirm;
         mOldPwd = mEtOld.getText().toString().trim();
         if (TextUtils.isEmpty(mOldPwd)) {
             FrameworkUtils.Toast.showShort(R.string.str_pwd_hint_old);
