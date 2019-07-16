@@ -4,8 +4,12 @@ import android.app.Activity;
 import android.app.ActivityManager;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.content.res.Configuration;
+import android.content.res.Resources;
+import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Point;
 import android.net.ConnectivityManager;
@@ -17,6 +21,7 @@ import android.support.annotation.NonNull;
 import android.support.v4.content.FileProvider;
 import android.text.TextUtils;
 import android.util.Base64;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
@@ -28,6 +33,7 @@ import com.hnhy.framework.system.SystemPager;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.ParameterizedType;
@@ -95,7 +101,17 @@ public class FrameworkUtils {
         }
         return fileUri;
     }
-
+    /**
+     * 强制类型转换
+     *
+     * @param obj 数据
+     * @param <T> 指定类型
+     * @return
+     */
+    @SuppressWarnings("unchecked")
+    public static <T> T cast(Object obj) {
+        return (T) obj;
+    }
     public static int dp2px(final float dpValue) {
         final float scale = Engine.getInstance().mContext.getResources().getDisplayMetrics().density;
         return (int) (dpValue * scale + 0.5f);
@@ -403,9 +419,65 @@ public class FrameworkUtils {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-
             return bitmap;
         }
+        /**
+         * bitmap 转为byte数组
+         *
+         * @param bitmap
+         * @param format
+         * @return
+         */
+        public static byte[] bitmap2Bytes(android.graphics.Bitmap bitmap, final android.graphics.Bitmap.CompressFormat format) {
+            if (bitmap == null) return null;
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            bitmap.compress(format, 100, baos);
+            return baos.toByteArray();
+        }
+
+        /**
+         * byte数组转为bitmap对象
+         *
+         * @param bytes
+         * @return
+         */
+        public static android.graphics.Bitmap bytes2Bitmap(final byte[] bytes) {
+            return (bytes == null || bytes.length == 0)
+                    ? null
+                    : BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+        }
+
+        /**
+         * 将Bitmap对象 保存到本地
+         * 需要读写内存卡的权限，否则会发生异常
+         *
+         * @param mBitmap
+         * @param filePath 图片路径  xxx/xxx/xx.jpg
+         * @return
+         */
+        public static String saveBitmap(android.graphics.Bitmap mBitmap, String filePath, int options) {
+            File filePic;
+            try {
+                filePic = new File(filePath);
+                if (!filePic.exists()) {
+                    filePic.getParentFile().mkdirs();
+                    filePic.createNewFile();
+                } else {
+                    filePic.delete();
+                    filePic.getParentFile().mkdirs();
+                    filePic.createNewFile();
+                }
+                FileOutputStream fos = new FileOutputStream(filePic);
+                mBitmap.compress(android.graphics.Bitmap.CompressFormat.JPEG, options, fos);
+                fos.flush();
+                fos.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+                return null;
+            }
+            return filePic.getAbsolutePath();
+        }
+
     }
 
     public static class Screen {
@@ -447,5 +519,110 @@ public class FrameworkUtils {
             }
             systemPager.getCurrActivity().getWindow().setAttributes(windowLP);
         }
+
+        /**
+         * 设置全屏显示
+         *
+         * @param activity
+         */
+        public static void setFullScreen(@NonNull final Activity activity) {
+            activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN
+                    | WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+        }
+
+        /**
+         * 获取屏幕尺寸与密度.
+         *
+         * @param context the context
+         * @return mDisplayMetrics
+         */
+        public static DisplayMetrics getDisplayMetrics(Context context) {
+            Resources mResources;
+            if (context == null) {
+                mResources = Resources.getSystem();
+
+            } else {
+                mResources = context.getResources();
+            }
+            // DisplayMetrics{density=1.5, width=480, height=854, scaledDensity=1.5,
+            // xdpi=160.421, ydpi=159.497}
+            // DisplayMetrics{density=2.0, width=720, height=1280,
+            // scaledDensity=2.0, xdpi=160.42105, ydpi=160.15764}
+            DisplayMetrics mDisplayMetrics = mResources.getDisplayMetrics();
+            return mDisplayMetrics;
+        }
+
+        /**
+         * 设置屏幕为横屏
+         *
+         * @param activity
+         */
+        public static void setLandscape(@NonNull final Activity activity) {
+            activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+        }
+
+        /**
+         * 设置屏幕为竖屏
+         *
+         * @param activity
+         */
+        public static void setPortrait(@NonNull final Activity activity) {
+            activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        }
+
+        /**
+         * 判断是否横屏
+         *
+         * @param context
+         * @return true:横屏   false:竖屏
+         */
+        public static boolean isLandscape(Context context) {
+            return context.getResources().getConfiguration().orientation
+                    == Configuration.ORIENTATION_LANDSCAPE;
+        }
+
+        /**
+         * 截屏
+         *
+         * @param activity
+         * @return
+         */
+        public static android.graphics.Bitmap screenShot(@NonNull final Activity activity) {
+            return screenShot(activity, false);
+        }
+
+        /**
+         * 返回当前界面的Bitmap对象
+         *
+         * @param activity          The activity.
+         * @param isDeleteStatusBar true:去掉状态栏，，false:包括状态栏.
+         * @return 界面的Bitmap对象
+         */
+        public static android.graphics.Bitmap screenShot(@NonNull final Activity activity, boolean isDeleteStatusBar) {
+            View decorView = activity.getWindow().getDecorView();
+            decorView.setDrawingCacheEnabled(true);
+            decorView.buildDrawingCache();
+            android.graphics.Bitmap bmp = decorView.getDrawingCache();
+            DisplayMetrics dm = new DisplayMetrics();
+            activity.getWindowManager().getDefaultDisplay().getMetrics(dm);
+            android.graphics.Bitmap ret;
+            if (isDeleteStatusBar) {
+                Resources resources = activity.getResources();
+                int resourceId = resources.getIdentifier("status_bar_height", "dimen", "android");
+                int statusBarHeight = resources.getDimensionPixelSize(resourceId);
+                ret = android.graphics.Bitmap.createBitmap(
+                        bmp,
+                        0,
+                        statusBarHeight,
+                        dm.widthPixels,
+                        dm.heightPixels - statusBarHeight
+                );
+            } else {
+                ret = android.graphics.Bitmap.createBitmap(bmp, 0, 0, dm.widthPixels, dm.heightPixels);
+            }
+            decorView.destroyDrawingCache();
+            return ret;
+        }
     }
+
 }
