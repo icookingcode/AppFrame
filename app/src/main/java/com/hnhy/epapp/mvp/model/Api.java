@@ -1,10 +1,10 @@
-package com.hnhy.epapp.mvp.ui.model;
+package com.hnhy.epapp.mvp.model;
 
 import android.support.annotation.NonNull;
 import android.text.TextUtils;
 
 import com.hnhy.epapp.app.Profile;
-import com.hnhy.epapp.mvp.ui.model.bean.User;
+import com.hnhy.epapp.mvp.model.bean.User;
 import com.hnhy.framework.frame.SystemManager;
 import com.hnhy.framework.system.SystemHttp;
 import com.hnhy.framework.system.net.Request;

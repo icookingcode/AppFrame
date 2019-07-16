@@ -1,4 +1,4 @@
-package com.hnhy.epapp.mvp.ui.model.bean;
+package com.hnhy.epapp.mvp.model.bean;
 
 /**
  * Created by guc on 2019/7/15.

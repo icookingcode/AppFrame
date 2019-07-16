@@ -1,9 +1,9 @@
 package com.hnhy.epapp.mvp.contract;
 
 
+import com.hnhy.epapp.mvp.model.bean.User;
 import com.hnhy.epapp.mvp.ui.BasePresenter;
 import com.hnhy.epapp.mvp.ui.BaseView;
-import com.hnhy.epapp.mvp.ui.model.bean.User;
 
 /**
  * Created by guc on 2019/7/15.

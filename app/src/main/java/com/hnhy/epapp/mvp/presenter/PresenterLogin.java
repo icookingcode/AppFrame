@@ -3,8 +3,8 @@ package com.hnhy.epapp.mvp.presenter;
 import android.text.TextUtils;
 
 import com.hnhy.epapp.mvp.contract.ContractLogin;
-import com.hnhy.epapp.mvp.ui.model.Api;
-import com.hnhy.epapp.mvp.ui.model.bean.User;
+import com.hnhy.epapp.mvp.model.Api;
+import com.hnhy.epapp.mvp.model.bean.User;
 import com.hnhy.epapp.system.MyRequestCallback;
 import com.hnhy.framework.system.net.Response;
 

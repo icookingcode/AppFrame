@@ -35,4 +35,10 @@ public class ActivityTest extends BaseActivity {
             super.onBackPressed();
         }
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        KeyBoardCarNumberUtil.hideKeyBoard();
+    }
 }
