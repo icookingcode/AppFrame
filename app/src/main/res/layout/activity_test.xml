@@ -18,4 +18,9 @@
         app:topIconMargin="@dimen/dimen_100dp"
         app:mulLineHint="false"
         app:hint1="没有数据"/>
+
+    <EditText
+        android:id="@+id/et_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 </LinearLayout>

@@ -3,6 +3,7 @@ package com.hnhy.ui.customkeyboard.idcard;
 import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.os.Build;
 import android.view.KeyEvent;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
@@ -17,6 +18,10 @@ public class KeyBoardIdCardNumberUtil {
     public static void showKeyBoard(final Activity activity, EditText editText, KeyBoardIdCardNumberView.OnInputFinishListener listener) {
         InputMethodManager imm = (InputMethodManager) activity.getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(editText.getWindowToken(), 0);
+        //点击不弹出系统软键盘
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            editText.setShowSoftInputOnFocus(false);
+        }
         if (dialog != null && dialog.isShowing()) {
             dialog.setInput(editText, listener);
         } else {

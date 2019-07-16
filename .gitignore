@@ -1,0 +1,13 @@
+*.iml
+.gradle
+/local.properties
+.idea
+/.idea
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+src/main/gen/
+.idea/vcs.xml
+app/src/main/java/com/hnhy/epapp/mvp/adapter/
+app/src/main/java/com/hnhy/epapp/mvp/model/
