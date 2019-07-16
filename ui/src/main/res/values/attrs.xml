@@ -52,5 +52,12 @@
             <enum name="invisible" value="1" />
         </attr>
     </declare-styleable>
-
+    <attr name="title" format="reference|string"/>
+    <attr name="titleTextColor" format="color"/>
+    <declare-styleable name="ViewRichText">
+        <attr name="title" />
+        <attr name="content"  />
+        <attr name="titleTextColor" />
+        <attr name="contentTextColor" format="color" />
+    </declare-styleable>
 </resources>

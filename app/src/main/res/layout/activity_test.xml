@@ -12,4 +12,10 @@
         app:leftType="finish"
         app:titleTextSize="@dimen/large_text_size"
         app:rightType="icon"/>
+    <com.hnhy.epapp.mvp.ui.widget.ViewNoData
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:topIconMargin="@dimen/dimen_100dp"
+        app:mulLineHint="false"
+        app:hint1="没有数据"/>
 </LinearLayout>

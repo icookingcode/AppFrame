@@ -1,4 +1,4 @@
-package com.hnhy.epapp.mvp.ui.widget;
+package com.hnhy.ui;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -10,7 +10,6 @@ import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
 import android.util.AttributeSet;
 
-import com.hnhy.epapp.R;
 
 /**
  * Created by guc on 2019/6/11.

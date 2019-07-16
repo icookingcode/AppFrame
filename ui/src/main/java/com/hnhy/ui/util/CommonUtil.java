@@ -127,7 +127,6 @@ public class CommonUtil {
         try {
             date = sdf.parse(dateStr);
         } catch (ParseException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         if (date != null) {
@@ -381,7 +380,7 @@ public class CommonUtil {
     public static String formExchange(String patternFrom, String patternTo, String dateStr) {
         SimpleDateFormat sdf = new SimpleDateFormat(patternFrom);
         SimpleDateFormat sdfTo = new SimpleDateFormat(patternTo);
-        Date date = null;
+        Date date;
         try {
             date = sdf.parse(dateStr);
             return sdfTo.format(date);
