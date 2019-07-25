@@ -71,6 +71,10 @@ public class Api {
     }
     //endregion 用户相关
 
+    //region weather 天气
+
+    //endregion
+
     private SystemHttp  getHttpSystem() {
         return SystemManager.getInstance().getSystem(SystemHttp.class);
     }

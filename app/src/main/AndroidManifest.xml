@@ -53,6 +53,8 @@
             android:name=".mvp.ui.activity.user.ActivityModifyPwd"
             android:description="@string/str_title_modify_pwd"
             android:screenOrientation="portrait" />
+
+        <activity android:name=".mvp.ui.activity.weather.ActivityCities" />
     </application>
 
 </manifest>
