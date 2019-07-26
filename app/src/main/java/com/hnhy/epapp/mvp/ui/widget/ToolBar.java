@@ -182,4 +182,14 @@ public class ToolBar extends FrameLayout {
     interface OnRightClickedListener{
         void onRightClicked();
     }
+
+    public void setTitle(String title) {
+        if (title.isEmpty()) return;
+        mTitle = title;
+        mTvTitle.setText(mTitle);
+    }
+
+    public void setTitle(int resid) {
+        setTitle(mCxt.getResources().getString(resid));
+    }
 }

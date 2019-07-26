@@ -5,6 +5,7 @@ import android.text.TextUtils;
 
 import com.hnhy.epapp.app.Profile;
 import com.hnhy.epapp.mvp.model.bean.User;
+import com.hnhy.epapp.mvp.model.bean.Weather;
 import com.hnhy.framework.frame.SystemManager;
 import com.hnhy.framework.system.SystemHttp;
 import com.hnhy.framework.system.net.Request;
@@ -72,6 +73,25 @@ public class Api {
     //endregion 用户相关
 
     //region weather 天气
+    public void getCityWeatherReport(Object tag, @NonNull Map<String, String> params, RequestCallback<Weather> callback) {
+        Request request = new Request.Builder()
+                .setRequestParams(params)
+                .setBaseUrl("https://www.tianqiapi.com/api/")
+                .setRelativeUrl("")
+                .setWrapperWholeResponse(true)
+                .build();
+        getHttpSystem().net(tag, request, callback);
+    }
+
+    public void getCityWeatherReport4HalfMonth(Object tag, @NonNull Map<String, String> params, RequestCallback<Weather> callback) {
+        Request request = new Request.Builder()
+                .setRequestParams(params)
+                .setBaseUrl("https://www.tianqiapi.com/api/")
+                .setRelativeUrl("")
+                .setWrapperWholeResponse(true)
+                .build();
+        getHttpSystem().net(tag, request, callback);
+    }
 
     //endregion
 

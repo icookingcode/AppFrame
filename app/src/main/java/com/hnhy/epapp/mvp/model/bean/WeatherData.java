@@ -9,9 +9,11 @@ import java.util.List;
 public class WeatherData {
     public String day;
     public String date;
+    public String date_nl;//农历
     public String week;
     public String wea;//天气
     public String air;//空气质量
+    public String humidity;//湿度
     public String air_level;//空气质量等级
     public String air_tips;//提示语
     public Alarm alarm;
@@ -49,6 +51,11 @@ public class WeatherData {
         public String tem;
         public String win;
         public String win_speed;
+
+        @Override
+        public String toString() {
+            return day + "\n" + wea + "\n" + tem + "\n" + win + win_speed + "\n";
+        }
     }
 
     /**

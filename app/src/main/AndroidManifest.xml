@@ -24,6 +24,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".mvp.ui.activity.weather.ActivityWeatherReport"></activity>
         <activity
             android:name=".mvp.ui.activity.noble.ActivityLoading"
             android:label="@string/app_name"
@@ -53,7 +54,6 @@
             android:name=".mvp.ui.activity.user.ActivityModifyPwd"
             android:description="@string/str_title_modify_pwd"
             android:screenOrientation="portrait" />
-
         <activity android:name=".mvp.ui.activity.weather.ActivityCities" />
     </application>
 
