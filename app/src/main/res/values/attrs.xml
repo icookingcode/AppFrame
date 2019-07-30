@@ -27,5 +27,6 @@
         </attr>
         <attr name="rightIcon" format="reference"/>
         <attr name="rightString" format="reference|string"/>
+        <attr name="isTransBg" format="boolean" />
     </declare-styleable>
 </resources>
