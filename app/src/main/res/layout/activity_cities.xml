@@ -11,7 +11,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:leftType="none"
+        app:leftType="finish"
         app:title="当前城市" />
 
     <LinearLayout

@@ -6,7 +6,7 @@ import android.support.annotation.Nullable;
 
 import com.hnhy.epapp.R;
 import com.hnhy.epapp.app.SharedPreferencesManager;
-import com.hnhy.epapp.mvp.ui.activity.weather.ActivityCities;
+import com.hnhy.epapp.mvp.ui.activity.ActivityFunctionSelect;
 import com.hnhy.framework.frame.BaseActivity;
 
 import java.util.concurrent.TimeUnit;
@@ -56,7 +56,7 @@ public class ActivityLoading extends BaseActivity {
                         } else {
 //                            Intent it = new Intent(ActivityLoading.this, ActivityLogin.class);
 //                            Intent it = new Intent(ActivityLoading.this, ActivityModifyPwd.class);
-                            Intent it = new Intent(ActivityLoading.this, ActivityCities.class);
+                            Intent it = new Intent(ActivityLoading.this, ActivityFunctionSelect.class);
                             if (getIntent().getExtras() != null) {
                                 it.putExtras(getIntent().getExtras());
                             }

@@ -60,5 +60,10 @@ public abstract class CommonRecycleAdapter<T> extends RecyclerView.Adapter<Commo
         notifyDataSetChanged();
     }
 
+    public void addItem(T data) {
+        this.mDataList.add(data);
+        notifyDataSetChanged();
+    }
+
     public abstract void bindData(CommonViewHolder holder, T data, int position);
 }

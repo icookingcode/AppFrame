@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".mvp.ui.activity.ActivityFunctionSelect">
+
+    <com.hnhy.epapp.mvp.ui.widget.ToolBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:leftType="none"
+        app:title="请选择功能" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_weather_report"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="天气预报" />
+
+        <Button
+            android:id="@+id/btn_bluetooth_usage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="BlueTooth使用" />
+    </LinearLayout>
+</LinearLayout>
