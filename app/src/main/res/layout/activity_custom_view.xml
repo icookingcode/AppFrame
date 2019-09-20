@@ -10,30 +10,26 @@
     <com.hnhy.epapp.mvp.ui.widget.ToolBar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:leftType="none"
-        app:title="请选择功能" />
+        app:leftType="finish"
+        app:title="自定义View" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <Button
-            android:id="@+id/btn_weather_report"
-            android:layout_width="match_parent"
+        <com.hnhy.epapp.mvp.ui.widget.CircleView
+            android:id="@+id/circle_view"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="天气预报" />
+            app:circle_radius="@dimen/dimen_100dp"
+            app:inner_circle_color="@color/colorRed"
+            app:middle_circle_color="@color/colorPrimary"
+            app:outer_circle_color="@color/colorGrayDark" />
 
-        <Button
-            android:id="@+id/btn_bluetooth_usage"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="BlueTooth使用" />
-
-        <Button
-            android:id="@+id/btn_custom_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="自定义View" />
+        <com.hnhy.epapp.mvp.ui.widget.MyPieChartView
+            android:id="@+id/pie_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
     </LinearLayout>
 </LinearLayout>

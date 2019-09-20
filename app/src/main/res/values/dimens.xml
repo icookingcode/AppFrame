@@ -46,4 +46,5 @@
     <dimen name="dimen_95dp">95dp</dimen>
     <dimen name="dimen_100dp">100dp</dimen>
     <dimen name="dimen_160dp">160dp</dimen>
+    <dimen name="avatar_size">100dp</dimen>
 </resources>

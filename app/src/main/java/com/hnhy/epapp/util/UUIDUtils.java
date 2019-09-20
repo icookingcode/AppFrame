@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
+import android.support.annotation.RequiresPermission;
 import android.telephony.TelephonyManager;
 
 import com.hnhy.framework.logger.Logger;
@@ -31,6 +32,7 @@ public class UUIDUtils {
      * @param context
      * @return
      */
+    @RequiresPermission(android.Manifest.permission.READ_PHONE_STATE)
     public static String getDeviceId(Context context) {
         StringBuilder deviceId = new StringBuilder();
         // 渠道标志

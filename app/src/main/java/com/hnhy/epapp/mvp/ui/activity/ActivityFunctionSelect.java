@@ -7,6 +7,7 @@ import android.view.View;
 
 import com.hnhy.epapp.R;
 import com.hnhy.epapp.mvp.ui.activity.bluetooth.ActivityBluetoothDevices;
+import com.hnhy.epapp.mvp.ui.activity.custom.ActivityCustomView;
 import com.hnhy.epapp.mvp.ui.activity.weather.ActivityCities;
 
 import butterknife.ButterKnife;
@@ -21,7 +22,7 @@ public class ActivityFunctionSelect extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.btn_weather_report, R.id.btn_bluetooth_usage})
+    @OnClick({R.id.btn_weather_report, R.id.btn_bluetooth_usage, R.id.btn_custom_view})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_weather_report:
@@ -29,6 +30,9 @@ public class ActivityFunctionSelect extends AppCompatActivity {
                 break;
             case R.id.btn_bluetooth_usage:
                 startActivity(new Intent(this, ActivityBluetoothDevices.class));
+                break;
+            case R.id.btn_custom_view:
+                startActivity(new Intent(this, ActivityCustomView.class));
                 break;
         }
     }

@@ -28,4 +28,30 @@
         <attr name="rightIcon" format="reference"/>
         <attr name="rightString" format="reference|string"/>
     </declare-styleable>
+
+    <declare-styleable name="MyPieChartView">
+        <attr name="bgColor" format="color" />
+        <attr name="lineWith" format="dimension" />
+        <!--大圆半径-->
+        <attr name="radius" format="dimension" />
+        <!--内部填充圆半径-->
+        <attr name="radiusInner" format="dimension" />
+        <!--指示圆点半径-->
+        <attr name="radiusCenterPoint" format="dimension" />
+        <!--内圆填充颜色-->
+        <attr name="innerCircleColor" format="dimension" />
+        <attr name="textSize4Describe" format="dimension" />
+        <attr name="textSize4Score" format="dimension" />
+        <attr name="textColor4Describe" format="color" />
+        <attr name="textColor4Score" format="color" />
+        <attr name="isDrawCenterText" format="boolean" />
+    </declare-styleable>
+
+    <!--CircleView-->
+    <declare-styleable name="CircleView">
+        <attr name="circle_radius" format="dimension" />
+        <attr name="outer_circle_color" format="reference|color" />
+        <attr name="middle_circle_color" format="reference|color" />
+        <attr name="inner_circle_color" format="reference|color" />
+    </declare-styleable>
 </resources>

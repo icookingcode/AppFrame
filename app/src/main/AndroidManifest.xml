@@ -59,6 +59,7 @@
         <activity android:name=".mvp.ui.activity.weather.ActivityCities" />
         <activity android:name=".mvp.ui.activity.weather.ActivityWeatherReport" />
         <activity android:name=".mvp.ui.activity.bluetooth.ActivityBluetoothDevices" />
+        <activity android:name=".mvp.ui.activity.custom.ActivityCustomView" />
     </application>
 
 </manifest>
