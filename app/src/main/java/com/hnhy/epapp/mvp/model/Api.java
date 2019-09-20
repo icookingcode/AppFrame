@@ -74,6 +74,8 @@ public class Api {
 
     //region weather 天气
     public void getCityWeatherReport(Object tag, @NonNull Map<String, String> params, RequestCallback<Weather> callback) {
+        params.put("appid", "17381897");
+        params.put("appsecret", "wtzH6BtW");
         Request request = new Request.Builder()
                 .setRequestParams(params)
                 .setBaseUrl("https://www.tianqiapi.com/api/")
