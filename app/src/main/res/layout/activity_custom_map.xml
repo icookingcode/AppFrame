@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorGrayDark"
+    android:orientation="vertical"
+    tools:context=".mvp.ui.activity.custom.ActivityCustomMap">
+
+    <com.hnhy.epapp.mvp.ui.widget.ToolBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:leftType="finish"
+        app:title="自定义地图" />
+
+    <com.hnhy.epapp.mvp.ui.widget.Map4Scale
+        android:layout_width="match_parent"
+        android:layout_height="300dp" />
+</LinearLayout>

@@ -1,5 +1,6 @@
 package com.hnhy.framework.util;
 
+import android.Manifest;
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.content.Context;
@@ -17,6 +18,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.storage.StorageManager;
 import android.support.annotation.NonNull;
+import android.support.annotation.RequiresPermission;
 import android.support.v4.content.FileProvider;
 import android.text.TextUtils;
 import android.util.Base64;
@@ -204,6 +206,7 @@ public class FrameworkUtils {
      * @return boolean
      * true:网络可用,false：网络未连接
      */
+    @RequiresPermission(Manifest.permission.ACCESS_NETWORK_STATE)
     public static boolean isNetworkAvailable(Context context) {
         try {
             ConnectivityManager connectivity = (ConnectivityManager) context

@@ -1,11 +1,15 @@
 package com.hnhy.epapp.mvp.ui.activity.custom;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
 
 import com.hnhy.epapp.R;
 import com.hnhy.epapp.mvp.ui.widget.CircleView;
+import com.hnhy.epapp.mvp.ui.widget.MapView;
 import com.hnhy.epapp.mvp.ui.widget.MyPieChartView;
+import com.hnhy.epapp.mvp.ui.widget.ToolBar;
 import com.hnhy.framework.frame.BaseActivity;
 
 import java.util.ArrayList;
@@ -23,6 +27,10 @@ public class ActivityCustomView extends BaseActivity {
     MyPieChartView mPieView;
     @BindView(R.id.circle_view)
     CircleView mCircleView;
+    @BindView(R.id.map_view)
+    MapView mMapView;
+    @BindView(R.id.toolbar)
+    ToolBar mToolbar;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -33,6 +41,9 @@ public class ActivityCustomView extends BaseActivity {
     }
 
     private void initView() {
+        mToolbar.setOnRightClickedListener(() -> {
+            startActivity(new Intent(this, ActivityCustomMap.class));
+        });
         List<MyPieChartView.PieData> mPieDatas = new ArrayList<>();
         mPieDatas.add(new MyPieChartView.PieData(5, "考勤", getResources().getColor(R.color.colorScoreRed)));
         mPieDatas.add(new MyPieChartView.PieData(10, "基础信息", getResources().getColor(R.color.colorScoreOrange)));
@@ -54,5 +65,8 @@ public class ActivityCustomView extends BaseActivity {
                     break;
             }
         });
+        new Handler().postDelayed(() -> {
+            mMapView.moveToPosition(2000, 620);
+        }, 1000);
     }
 }

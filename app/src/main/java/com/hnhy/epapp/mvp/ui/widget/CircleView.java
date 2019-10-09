@@ -30,7 +30,7 @@ public class CircleView extends View {
     private Paint mPaint;
     private int mWidth;
     private int mHeight;
-    private Position mClickPostion;//点击位置
+    private Position mClickPosition;//点击位置
     private OnClickListener mClickListener;//点击监听
     private float mStartX, mStartY, mEndX, mEndY;
     private boolean isClickedEvent = false;//是否时点击事件
@@ -103,7 +103,7 @@ public class CircleView extends View {
                 isClickedEvent = true;
                 mStartX = event.getX();
                 mStartY = event.getY();
-                getClickPostion(event.getX(), event.getY());
+                getClickPosition(event.getX(), event.getY());
                 break;
             case MotionEvent.ACTION_MOVE://移动
                 mEndX = event.getX();
@@ -114,8 +114,8 @@ public class CircleView extends View {
                 if (dltX > 10 || dltY > 10) isClickedEvent = false;
                 break;
             case MotionEvent.ACTION_UP://抬起
-                if (isClickedEvent && mClickListener != null)
-                    mClickListener.onClicked(mClickPostion);
+                if (isClickedEvent && mClickListener != null && mClickPosition != Position.NONE)
+                    mClickListener.onClicked(mClickPosition);
                 break;
         }
         return true;//自己处理触摸事件
@@ -124,15 +124,17 @@ public class CircleView extends View {
     /**
      * 获取点击位置
      */
-    private void getClickPostion(float x, float y) {
+    private void getClickPosition(float x, float y) {
         double distance2 = Math.pow(Math.abs(x - mRadius), 2) + Math.pow(Math.abs(y - mRadius), 2);
         double distance = Math.sqrt(distance2);
         if (distance < mRadius / 3) {
-            mClickPostion = Position.INNER;
+            mClickPosition = Position.INNER;
         } else if (distance >= mRadius / 3 && distance < mRadius * 2 / 3) {
-            mClickPostion = Position.MIDDLE;
+            mClickPosition = Position.MIDDLE;
+        } else if (distance <= mRadius) {
+            mClickPosition = Position.OUTER;
         } else {
-            mClickPostion = Position.OUTER;
+            mClickPosition = Position.NONE;
         }
 
     }
@@ -143,7 +145,7 @@ public class CircleView extends View {
     }
 
     public enum Position {
-        INNER, OUTER, MIDDLE
+        INNER, OUTER, MIDDLE, NONE
     }
 
     public interface OnClickListener {

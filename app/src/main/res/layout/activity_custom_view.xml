@@ -8,9 +8,12 @@
     tools:context=".mvp.ui.activity.ActivityFunctionSelect">
 
     <com.hnhy.epapp.mvp.ui.widget.ToolBar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:leftType="finish"
+        app:rightString="地图"
+        app:rightType="string"
         app:title="自定义View" />
 
     <LinearLayout
@@ -31,5 +34,11 @@
             android:id="@+id/pie_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
+
+        <com.hnhy.epapp.mvp.ui.widget.MapView
+            android:id="@+id/map_view"
+            android:layout_width="match_parent"
+            android:layout_height="150dp" />
+
     </LinearLayout>
 </LinearLayout>

@@ -110,7 +110,7 @@ public class ToolBar extends FrameLayout {
         }
         mIvFunctionLeft.setBackgroundResource(mLeftIconId);
         mTitle = mTitle == null?"暂无":mTitle;
-        mRightFuncitonString = mRightFuncitonString == null?"新增":mTitle;
+        mRightFuncitonString = mRightFuncitonString == null ? "新增" : mRightFuncitonString;
         mTvTitle.setText(mTitle);
         mTvRightFunction.setText(mRightFuncitonString);
         mTvTitle.setTextColor(mTitleTextColor);
@@ -176,10 +176,11 @@ public class ToolBar extends FrameLayout {
         return (int) (pxValue / fontScale + 0.5f);
     }
 
-    interface OnLeftClickedListener{
+    public interface OnLeftClickedListener {
         void onLeftClicked();
     }
-    interface OnRightClickedListener{
+
+    public interface OnRightClickedListener {
         void onRightClicked();
     }
 
