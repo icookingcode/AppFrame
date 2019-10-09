@@ -18,4 +18,6 @@
 
     <string name="tips_default_loading">正在加载，请稍后...</string>
     <string name="tips_is_committing">正在提交,请稍后...</string>
+    <string name="start_vpn">开启VPN</string>
+    <string name="stop_vpn">关闭VPN</string>
 </resources>

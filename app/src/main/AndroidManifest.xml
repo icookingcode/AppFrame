@@ -26,7 +26,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".mvp.ui.activity.custom.ActivityCustomMap"></activity>
+        <activity android:name=".mvp.ui.activity.vpn.ActivityVpnDemo" />
+        <activity android:name=".mvp.ui.activity.custom.ActivityCustomMap" />
         <activity android:name=".mvp.ui.activity.ActivityFunctionSelect" />
         <activity
             android:name=".mvp.ui.activity.noble.ActivityLoading"
@@ -61,6 +62,17 @@
         <activity android:name=".mvp.ui.activity.weather.ActivityWeatherReport" />
         <activity android:name=".mvp.ui.activity.bluetooth.ActivityBluetoothDevices" />
         <activity android:name=".mvp.ui.activity.custom.ActivityCustomView" />
+
+        <service
+            android:name=".mvp.ui.activity.vpn.MyVpnService"
+            android:permission="android.permission.BIND_VPN_SERVICE">
+            <intent-filter>
+                <action android:name="android.net.VpnService" />
+            </intent-filter>
+            <meta-data
+                android:name="android.net.VpnService.SUPPORTS_ALWAYS_ON"
+                android:value="false" />
+        </service>
     </application>
 
 </manifest>

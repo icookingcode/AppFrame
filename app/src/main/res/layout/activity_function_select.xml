@@ -35,5 +35,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="自定义View" />
+
+        <Button
+            android:id="@+id/btn_vpn_demo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="VPN Demo"
+            android:textAllCaps="false" />
     </LinearLayout>
 </LinearLayout>
