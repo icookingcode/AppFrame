@@ -7,13 +7,15 @@ import android.support.v4.app.FragmentTransaction;
 import com.hnhy.epapp.R;
 import com.hnhy.epapp.mvp.ui.fg.FragmentList;
 import com.hnhy.epapp.mvp.ui.fg.FragmentViewer;
+import com.hnhy.epapp.mvp.ui.fg.MyDialogFragment;
 import com.hnhy.framework.frame.BaseActivity;
 import com.hnhy.framework.util.FrameworkUtils;
 
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class ActivityFragmentDemo extends BaseActivity implements FragmentList.OnTitleSelectedListener {
-
+    private static final String TAG = "ActivityFragmentDemo";
     FragmentList mFgList;
     FragmentViewer mFgViewer;
     private FragmentManager mFgManager;
@@ -46,5 +48,11 @@ public class ActivityFragmentDemo extends BaseActivity implements FragmentList.O
     public void onTitleSelected(String title) {
         FrameworkUtils.Toast.showShort("您点击了" + title);
         mFgViewer.setContent("这是 " + title + " 的内容");
+    }
+
+    @OnClick(R.id.btn_show_dialog)
+    public void onViewClicked() {
+        MyDialogFragment dialogFragment = new MyDialogFragment();
+        dialogFragment.show(mFgManager, TAG);
     }
 }
