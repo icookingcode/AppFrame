@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".mvp.ui.activity.ActivityFragmentDemo">
+
+    <com.hnhy.epapp.mvp.ui.widget.ToolBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:leftType="finish"
+        app:title="Fragment Demo" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:orientation="horizontal">
+
+        <fragment
+            android:id="@+id/fg_list"
+            android:name="com.hnhy.epapp.mvp.ui.fg.FragmentList"
+            android:layout_width="120dp"
+            android:layout_height="match_parent" />
+
+        <fragment
+            android:id="@+id/fg_viewer"
+            android:name="com.hnhy.epapp.mvp.ui.fg.FragmentViewer"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>

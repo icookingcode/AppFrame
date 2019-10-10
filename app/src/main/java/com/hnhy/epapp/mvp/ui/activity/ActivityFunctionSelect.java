@@ -23,7 +23,7 @@ public class ActivityFunctionSelect extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.btn_weather_report, R.id.btn_bluetooth_usage, R.id.btn_custom_view, R.id.btn_vpn_demo})
+    @OnClick({R.id.btn_weather_report, R.id.btn_bluetooth_usage, R.id.btn_custom_view, R.id.btn_vpn_demo, R.id.btn_fragment})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_weather_report:
@@ -37,6 +37,9 @@ public class ActivityFunctionSelect extends AppCompatActivity {
                 break;
             case R.id.btn_vpn_demo:
                 startActivity(new Intent(this, ActivityVpnDemo.class));
+                break;
+            case R.id.btn_fragment:
+                startActivity(new Intent(this, ActivityFragmentDemo.class));
                 break;
         }
     }

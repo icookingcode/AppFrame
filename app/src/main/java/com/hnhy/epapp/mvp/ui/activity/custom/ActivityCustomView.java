@@ -4,12 +4,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
+import android.widget.ImageView;
 
 import com.hnhy.epapp.R;
 import com.hnhy.epapp.mvp.ui.widget.CircleView;
 import com.hnhy.epapp.mvp.ui.widget.MapView;
 import com.hnhy.epapp.mvp.ui.widget.MyPieChartView;
 import com.hnhy.epapp.mvp.ui.widget.ToolBar;
+import com.hnhy.epapp.mvp.ui.widget.coffee.CoffeeDrawable;
 import com.hnhy.framework.frame.BaseActivity;
 
 import java.util.ArrayList;
@@ -31,6 +33,8 @@ public class ActivityCustomView extends BaseActivity {
     MapView mMapView;
     @BindView(R.id.toolbar)
     ToolBar mToolbar;
+    @BindView(R.id.iv_coffee)
+    ImageView mIvCoffee;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -65,8 +69,13 @@ public class ActivityCustomView extends BaseActivity {
                     break;
             }
         });
+        CoffeeDrawable drawable = CoffeeDrawable.create(mIvCoffee, 50);
+        drawable.setProgress(1);
         new Handler().postDelayed(() -> {
             mMapView.moveToPosition(2000, 620);
+            drawable.start();
         }, 1000);
+
+
     }
 }

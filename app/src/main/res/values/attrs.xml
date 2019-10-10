@@ -54,4 +54,13 @@
         <attr name="middle_circle_color" format="reference|color" />
         <attr name="inner_circle_color" format="reference|color" />
     </declare-styleable>
+
+    <declare-styleable name="CoffeeHeader">
+        <attr name="coffeeColor" format="color" />
+        <attr name="cupBodyColor" format="color" />
+        <attr name="cupBottomColor" format="color" />
+        <attr name="handColor" format="color" />
+        <attr name="stickColor" format="color" />
+        <attr name="cupRadius" format="dimension" />
+    </declare-styleable>
 </resources>

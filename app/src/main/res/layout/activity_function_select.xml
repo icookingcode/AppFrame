@@ -42,5 +42,12 @@
             android:layout_height="wrap_content"
             android:text="VPN Demo"
             android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fragment Demo"
+            android:textAllCaps="false" />
     </LinearLayout>
 </LinearLayout>

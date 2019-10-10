@@ -26,6 +26,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".mvp.ui.activity.ActivityFragmentDemo"></activity>
         <activity android:name=".mvp.ui.activity.vpn.ActivityVpnDemo" />
         <activity android:name=".mvp.ui.activity.custom.ActivityCustomMap" />
         <activity android:name=".mvp.ui.activity.ActivityFunctionSelect" />
@@ -69,6 +70,7 @@
             <intent-filter>
                 <action android:name="android.net.VpnService" />
             </intent-filter>
+
             <meta-data
                 android:name="android.net.VpnService.SUPPORTS_ALWAYS_ON"
                 android:value="false" />
