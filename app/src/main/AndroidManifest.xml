@@ -27,8 +27,10 @@
         android:networkSecurityConfig="@xml/network_security_config"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:resizeableActivity="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".mvp.ui.activity.loader.ActivityLoaderDemo"></activity>
+        <!--android:resizeableActivity="true"添加多窗口支持-->
+        <activity android:name=".mvp.ui.activity.loader.ActivityLoaderDemo" />
         <activity android:name=".mvp.ui.activity.interact.ActivityReceiver">
 
             <!-- 允许其他应用启动 -->
@@ -74,6 +76,9 @@
                     android:host="myapp"
                     android:scheme="guc" />
             </intent-filter>
+            <meta-data
+                android:name="android.app.shortcuts"
+                android:resource="@xml/shortcuts" />
         </activity>
         <activity
             android:name=".mvp.ui.activity.noble.ActivityGuide"

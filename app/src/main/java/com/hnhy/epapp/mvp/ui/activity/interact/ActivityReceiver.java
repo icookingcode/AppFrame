@@ -36,30 +36,31 @@ public class ActivityReceiver extends AppCompatActivity {
         ButterKnife.bind(this);
         // Get the intent that started this activity
         Intent intent = getIntent();
-        Uri data = intent.getData();
         // Figure out what to do based on the intent type
-        if (intent.getType().indexOf("image/") != -1) {
-            // Handle intents with image data ...
-            ClipData clipData = intent.getClipData();
-            StringBuilder stringBuilder = new StringBuilder();
-            stringBuilder.append(String.format("接收到：%d张图片\n%s", clipData.getItemCount(), clipData.getDescription()));
-            for (int i = 0; i < clipData.getItemCount(); i++) {
-                ClipData.Item item = clipData.getItemAt(i);
-                stringBuilder.append("\n" + item.getText());
-                Uri picUri = item.getUri();
-                try {
-                    InputStream imageStream = getContentResolver().openInputStream(picUri);
-                    Bitmap yourSelectedImage = BitmapFactory.decodeStream(imageStream);
-                    mIvPicture.setImageBitmap(yourSelectedImage);
-                } catch (FileNotFoundException e) {
-                    e.printStackTrace();
+        if (intent.getType() != null) {
+            if (intent.getType().indexOf("image/") != -1) {
+                // Handle intents with image data ...
+                ClipData clipData = intent.getClipData();
+                StringBuilder stringBuilder = new StringBuilder();
+                stringBuilder.append(String.format("接收到：%d张图片\n%s", clipData.getItemCount(), clipData.getDescription()));
+                for (int i = 0; i < clipData.getItemCount(); i++) {
+                    ClipData.Item item = clipData.getItemAt(i);
+                    stringBuilder.append("\n" + item.getText());
+                    Uri picUri = item.getUri();
+                    try {
+                        InputStream imageStream = getContentResolver().openInputStream(picUri);
+                        Bitmap yourSelectedImage = BitmapFactory.decodeStream(imageStream);
+                        mIvPicture.setImageBitmap(yourSelectedImage);
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    }
                 }
+                mTvContent.setText(stringBuilder.toString());
+            } else if (intent.getType().equals("text/plain")) {
+                // Handle intents with text ...
+                String revStr = intent.getStringExtra(Intent.EXTRA_TEXT);
+                mTvContent.setText(revStr);
             }
-            mTvContent.setText(stringBuilder.toString());
-        } else if (intent.getType().equals("text/plain")) {
-            // Handle intents with text ...
-            String revStr = intent.getStringExtra(Intent.EXTRA_TEXT);
-            mTvContent.setText(revStr);
         }
     }
 
