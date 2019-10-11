@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".mvp.ui.activity.ActivityInteract">
+
+    <com.hnhy.epapp.mvp.ui.widget.ToolBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:leftType="finish"
+        app:title="与其他应用交互" />
+
+    <Button
+        android:id="@+id/btn_open_url"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="打开百度" />
+
+    <Button
+        android:id="@+id/btn_share"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="分享文本" />
+
+    <Button
+        android:id="@+id/btn_pick_contact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="选择联系人" />
+</LinearLayout>

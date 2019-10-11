@@ -13,41 +13,54 @@
         app:leftType="none"
         app:title="请选择功能" />
 
-    <LinearLayout
+    <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="wrap_content">
 
-        <Button
-            android:id="@+id/btn_weather_report"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="天气预报" />
+            android:orientation="vertical">
 
-        <Button
-            android:id="@+id/btn_bluetooth_usage"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="BlueTooth使用" />
+            <Button
+                android:id="@+id/btn_weather_report"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="天气预报" />
 
-        <Button
-            android:id="@+id/btn_custom_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="自定义View" />
+            <Button
+                android:id="@+id/btn_bluetooth_usage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="BlueTooth使用" />
 
-        <Button
-            android:id="@+id/btn_vpn_demo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="VPN Demo"
-            android:textAllCaps="false" />
+            <Button
+                android:id="@+id/btn_custom_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="自定义View" />
 
-        <Button
-            android:id="@+id/btn_fragment"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Fragment Demo"
-            android:textAllCaps="false" />
-    </LinearLayout>
+            <Button
+                android:id="@+id/btn_vpn_demo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="VPN Demo"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btn_fragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Fragment Demo"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btn_interact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="与其他应用交互"
+                android:textAllCaps="false" />
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
 </LinearLayout>

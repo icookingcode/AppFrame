@@ -16,6 +16,7 @@
     <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
 
     <application
         android:name=".app.CustomApplication"
@@ -26,7 +27,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".mvp.ui.activity.ActivityFragmentDemo"></activity>
+        <activity android:name=".mvp.ui.activity.interact.ActivityReceiver">
+            <!--允许其他应用启动-->
+            <intent-filter
+                android:icon="@drawable/icon_empty"
+                android:label="发送给我的App">
+                <action android:name="android.intent.action.SEND" />
+
+                <data android:mimeType="text/plain" />
+                <data android:mimeType="image/*" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".mvp.ui.activity.ActivityInteract" />
+        <activity android:name=".mvp.ui.activity.ActivityFragmentDemo" />
         <activity android:name=".mvp.ui.activity.vpn.ActivityVpnDemo" />
         <activity android:name=".mvp.ui.activity.custom.ActivityCustomMap" />
         <activity android:name=".mvp.ui.activity.ActivityFunctionSelect" />
@@ -40,6 +55,20 @@
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <!--允许网页启动-->
+            <intent-filter>
+                <!--必有项-->
+                <action android:name="android.intent.action.VIEW" />
+                <!--表示该页面可以被隐式调用，必须加上该项-->
+                <category android:name="android.intent.category.DEFAULT" />
+                <!--BROWSABLE指定该Activity能被浏览器安全调用-->
+                <category android:name="android.intent.category.BROWSABLE" />
+                <!--协议部分-->
+                <!--声明自定义scheme，类似于http, https-->
+                <data
+                    android:host="myapp"
+                    android:scheme="guc" />
             </intent-filter>
         </activity>
         <activity

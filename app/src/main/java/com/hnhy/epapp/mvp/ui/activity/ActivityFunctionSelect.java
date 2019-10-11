@@ -2,7 +2,6 @@ package com.hnhy.epapp.mvp.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.hnhy.epapp.R;
@@ -10,11 +9,13 @@ import com.hnhy.epapp.mvp.ui.activity.bluetooth.ActivityBluetoothDevices;
 import com.hnhy.epapp.mvp.ui.activity.custom.ActivityCustomView;
 import com.hnhy.epapp.mvp.ui.activity.vpn.ActivityVpnDemo;
 import com.hnhy.epapp.mvp.ui.activity.weather.ActivityCities;
+import com.hnhy.framework.frame.BaseActivity;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class ActivityFunctionSelect extends AppCompatActivity {
+public class ActivityFunctionSelect extends BaseActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +24,7 @@ public class ActivityFunctionSelect extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.btn_weather_report, R.id.btn_bluetooth_usage, R.id.btn_custom_view, R.id.btn_vpn_demo, R.id.btn_fragment})
+    @OnClick({R.id.btn_weather_report, R.id.btn_bluetooth_usage, R.id.btn_custom_view, R.id.btn_vpn_demo, R.id.btn_fragment, R.id.btn_interact})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_weather_report:
@@ -41,6 +42,10 @@ public class ActivityFunctionSelect extends AppCompatActivity {
             case R.id.btn_fragment:
                 startActivity(new Intent(this, ActivityFragmentDemo.class));
                 break;
+            case R.id.btn_interact:
+                startActivity(new Intent(this, ActivityInteract.class));
+                break;
         }
     }
+
 }
