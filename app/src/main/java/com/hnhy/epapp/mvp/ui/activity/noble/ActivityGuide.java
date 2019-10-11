@@ -74,6 +74,7 @@ public class ActivityGuide extends BaseActivity {
                 , Manifest.permission.CAMERA
                 , Manifest.permission.CALL_PHONE
                 , Manifest.permission.READ_CONTACTS
+                , Manifest.permission.WRITE_CONTACTS
                 , Manifest.permission.ACCESS_FINE_LOCATION
         };
         PermissionOption option = new PermissionOption.Builder().setPermissions(permissions).build();

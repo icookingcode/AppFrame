@@ -20,6 +20,9 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+/**
+ * 与其他应用交互
+ */
 public class ActivityInteract extends AppCompatActivity {
     private static final int PICK_CONTACT_REQUEST = 1;
     @BindView(R.id.btn_pick_contact)
