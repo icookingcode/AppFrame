@@ -12,3 +12,4 @@ CoffeeDrawable : 搅拌咖啡动画
 多窗口支持  
 创建快捷方式  
 * static shortcut
+小部件（微件）的创建

@@ -38,7 +38,7 @@ public class ActivityReceiver extends AppCompatActivity {
         Intent intent = getIntent();
         // Figure out what to do based on the intent type
         if (intent.getType() != null) {
-            if (intent.getType().indexOf("image/") != -1) {
+            if (intent.getType().contains("image/")) {
                 // Handle intents with image data ...
                 ClipData clipData = intent.getClipData();
                 StringBuilder stringBuilder = new StringBuilder();
