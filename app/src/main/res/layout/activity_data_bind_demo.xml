@@ -3,13 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-
-        <import type="android.text.TextUtils" />
-
         <variable
             name="user"
             type="com.hnhy.epapp.mvp.model.bean.User" />
-
         <variable
             name="my_default"
             type="String"
@@ -31,7 +27,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text='@{TextUtils.isEmpty(user.userName)? "暂无": user.userName}' />
+            android:text='@{ user.userName ?? "暂无"}' />
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recycler_view"
