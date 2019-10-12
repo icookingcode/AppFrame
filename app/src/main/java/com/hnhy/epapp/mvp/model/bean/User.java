@@ -5,4 +5,5 @@ package com.hnhy.epapp.mvp.model.bean;
  * 描述：用户类
  */
 public class User {
+    public String userName;
 }

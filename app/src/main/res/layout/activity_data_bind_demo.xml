@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.text.TextUtils" />
+
+        <variable
+            name="user"
+            type="com.hnhy.epapp.mvp.model.bean.User" />
+
+        <variable
+            name="my_default"
+            type="String"
+            android:value="暂无" />
+    </data>
+
+    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".mvp.ui.activity.databind.ActivityDataBindDemo">
+
+        <com.hnhy.epapp.mvp.ui.widget.ToolBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:leftType="finish"
+            app:title="数据绑定库" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text='@{TextUtils.isEmpty(user.userName)? "暂无": user.userName}' />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</layout>

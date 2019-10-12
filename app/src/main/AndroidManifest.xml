@@ -29,6 +29,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".mvp.ui.activity.databind.ActivityDataBindDemo"></activity>
+
         <receiver android:name=".NewAppWidget">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
@@ -37,9 +39,7 @@
             <meta-data
                 android:name="android.appwidget.provider"
                 android:resource="@xml/new_app_widget_info" />
-        </receiver>
-
-        <!-- android:resizeableActivity="true"添加多窗口支持 -->
+        </receiver> <!-- android:resizeableActivity="true"添加多窗口支持 -->
         <activity android:name=".mvp.ui.activity.loader.ActivityLoaderDemo" />
         <activity android:name=".mvp.ui.activity.interact.ActivityReceiver">
 

@@ -11,5 +11,8 @@ CoffeeDrawable : 搅拌咖啡动画
 加载器使用
 多窗口支持  
 创建快捷方式  
-* static shortcut
-小部件（微件）的创建
+* static shortcut  
+小部件（微件）的创建  
+
+## 架构组件
+数据绑定库  
