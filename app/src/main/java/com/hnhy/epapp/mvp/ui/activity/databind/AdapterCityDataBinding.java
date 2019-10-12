@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import com.hnhy.epapp.R;
 import com.hnhy.epapp.databinding.ItemCityBindingBinding;
 import com.hnhy.epapp.mvp.model.bean.City;
-import com.hnhy.framework.util.FrameworkUtils;
+import com.hnhy.epapp.mvp.ui.activity.weather.ActivityWeatherReport;
 import com.hnhy.ui.adapter.CommonViewHolder;
 
 import java.util.ArrayList;
@@ -48,7 +48,7 @@ public class AdapterCityDataBinding extends RecyclerView.Adapter<CommonViewHolde
         viewHolder.setCommonClickListener(new CommonViewHolder.onItemCommonClickListener() {
             @Override
             public void onItemClickListener(int position) {
-                FrameworkUtils.Toast.showShort("您点击了" + cities.get(position).cityZh);
+                ActivityWeatherReport.jump(context, cities.get(position));
             }
 
             @Override

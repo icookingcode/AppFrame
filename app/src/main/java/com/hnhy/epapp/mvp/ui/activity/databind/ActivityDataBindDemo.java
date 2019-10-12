@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 
 import com.hnhy.epapp.R;
 import com.hnhy.epapp.databinding.ActivityDataBindDemoBinding;
+import com.hnhy.epapp.mvp.model.bean.User;
 import com.hnhy.epapp.util.AssersUtil;
 
 public class ActivityDataBindDemo extends AppCompatActivity {
@@ -17,9 +18,9 @@ public class ActivityDataBindDemo extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ActivityDataBindDemoBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_data_bind_demo);
-//        User user = new User();
-//        user.userName = "谷超超";
-//        binding.setUser(user);
+        User user = new User();
+        user.userName = "谷超超";
+        binding.setUser(user);
         initRcv();
     }
 
