@@ -18,6 +18,7 @@ public class ActivityDataBindDemo extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ActivityDataBindDemoBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_data_bind_demo);
+        binding.setMyDefault("暂无");
         User user = new User();
         user.userName = "谷超超";
         binding.setUser(user);

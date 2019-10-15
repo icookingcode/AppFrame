@@ -27,7 +27,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text='@{ user.userName ?? "暂无"}' />
+            android:text='@{ user.userName ?? my_default}' />
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recycler_view"

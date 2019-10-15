@@ -16,3 +16,5 @@ CoffeeDrawable : 搅拌咖啡动画
 
 ## 架构组件
 数据绑定库  
+处理生命周期  
+LiveData   

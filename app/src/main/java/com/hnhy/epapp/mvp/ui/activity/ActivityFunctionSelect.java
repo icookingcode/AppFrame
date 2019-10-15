@@ -8,6 +8,7 @@ import com.hnhy.epapp.R;
 import com.hnhy.epapp.mvp.ui.activity.bluetooth.ActivityBluetoothDevices;
 import com.hnhy.epapp.mvp.ui.activity.custom.ActivityCustomView;
 import com.hnhy.epapp.mvp.ui.activity.databind.ActivityDataBindDemo;
+import com.hnhy.epapp.mvp.ui.activity.lifecycle.ActivityLifecycleDemo;
 import com.hnhy.epapp.mvp.ui.activity.loader.ActivityLoaderDemo;
 import com.hnhy.epapp.mvp.ui.activity.vpn.ActivityVpnDemo;
 import com.hnhy.epapp.mvp.ui.activity.weather.ActivityCities;
@@ -26,7 +27,7 @@ public class ActivityFunctionSelect extends BaseActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.btn_weather_report, R.id.btn_bluetooth_usage, R.id.btn_custom_view, R.id.btn_vpn_demo, R.id.btn_fragment, R.id.btn_interact, R.id.btn_loader, R.id.btn_data_binding})
+    @OnClick({R.id.btn_weather_report, R.id.btn_bluetooth_usage, R.id.btn_custom_view, R.id.btn_vpn_demo, R.id.btn_fragment, R.id.btn_interact, R.id.btn_loader, R.id.btn_data_binding, R.id.btn_lifecycle})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_weather_report:
@@ -52,6 +53,9 @@ public class ActivityFunctionSelect extends BaseActivity {
                 break;
             case R.id.btn_data_binding:
                 startActivity(new Intent(this, ActivityDataBindDemo.class));
+                break;
+            case R.id.btn_lifecycle:
+                startActivity(new Intent(this, ActivityLifecycleDemo.class));
                 break;
         }
     }
