@@ -30,6 +30,7 @@ public class ActivityLifecycleDemo extends AppCompatActivity implements Lifecycl
     private MyViewModel myViewModel;
     private LifecycleBinding binding;
     private TextView tvName;
+    private User mUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +38,9 @@ public class ActivityLifecycleDemo extends AppCompatActivity implements Lifecycl
         binding = DataBindingUtil.setContentView(this, R.layout.activity_lifecycle_demo);
         tvName = findViewById(R.id.tv_name);
         binding.setTitle("处理生命周期");
+        mUser = new User();
+        binding.setUser(mUser);
+        mUser.setUserName("初始用户姓名");
         mLifecycleRegistry = new LifecycleRegistry(this);
 //        myViewModel = new MyViewModel();
         myViewModel = ViewModelProviders.of(this).get(MyViewModel.class);
@@ -48,7 +52,7 @@ public class ActivityLifecycleDemo extends AppCompatActivity implements Lifecycl
         new Handler().postDelayed(() -> {
             myViewModel.getCurrentName().postValue("Hello 谷超超" + new Random().nextInt());
             User user = new User();
-            user.userName = "谷超超 - " + new Random().nextInt(100);
+            user.setUserName("谷超超 - " + new Random().nextInt(100));
             myViewModel.getCurrentUser().postValue(user);
         }, 3000);
     }
