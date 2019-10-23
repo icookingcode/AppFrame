@@ -12,6 +12,7 @@ import com.hnhy.epapp.mvp.ui.activity.lifecycle.ActivityLifecycleDemo;
 import com.hnhy.epapp.mvp.ui.activity.loader.ActivityLoaderDemo;
 import com.hnhy.epapp.mvp.ui.activity.vpn.ActivityVpnDemo;
 import com.hnhy.epapp.mvp.ui.activity.weather.ActivityCities;
+import com.hnhy.epapp.mvp.ui.activity.workmanager.ActivityWorkManager;
 import com.hnhy.framework.frame.BaseActivity;
 
 import butterknife.ButterKnife;
@@ -27,7 +28,7 @@ public class ActivityFunctionSelect extends BaseActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.btn_weather_report, R.id.btn_bluetooth_usage, R.id.btn_custom_view, R.id.btn_vpn_demo, R.id.btn_fragment, R.id.btn_interact, R.id.btn_loader, R.id.btn_data_binding, R.id.btn_lifecycle})
+    @OnClick({R.id.btn_weather_report, R.id.btn_bluetooth_usage, R.id.btn_custom_view, R.id.btn_vpn_demo, R.id.btn_fragment, R.id.btn_interact, R.id.btn_loader, R.id.btn_data_binding, R.id.btn_lifecycle, R.id.btn_work_manager})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_weather_report:
@@ -56,6 +57,9 @@ public class ActivityFunctionSelect extends BaseActivity {
                 break;
             case R.id.btn_lifecycle:
                 startActivity(new Intent(this, ActivityLifecycleDemo.class));
+                break;
+            case R.id.btn_work_manager:
+                startActivity(new Intent(this, ActivityWorkManager.class));
                 break;
         }
     }

@@ -18,3 +18,4 @@ CoffeeDrawable : 搅拌咖啡动画
 数据绑定库  
 处理生命周期  
 LiveData   
+WorkManager使用

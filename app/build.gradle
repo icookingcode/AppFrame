@@ -80,7 +80,10 @@ android {
         targetCompatibility = '1.8'
     }
 }
-
+configurations {
+//这里要排除到这个包，这个包会与 com.google.guava 冲突，导致编译不过
+    all*.exclude group: 'com.google.guava', module: 'listenablefuture'
+}
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':framework')
@@ -97,4 +100,7 @@ dependencies {
     //刷新
     implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0'
     implementation 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0'  //没有使用特殊Header，可以不加这行
+
+    //WorkManager
+    implementation "android.arch.work:work-runtime:1.0.1"
 }
