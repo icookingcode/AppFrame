@@ -88,6 +88,13 @@
                 android:layout_height="wrap_content"
                 android:text="WorkManager"
                 android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btn_intent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Intent和Intent过滤器"
+                android:textAllCaps="false" />
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 

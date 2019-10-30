@@ -29,7 +29,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <!-- android:resizeableActivity="true"添加多窗口支持 -->
+        <activity android:name=".mvp.ui.activity.intent.ActivityHidden">
+            <intent-filter>
+                <action android:name="com.hnhy.epapp.mvp.ui.activity.intent.ActivityHidden" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".mvp.ui.activity.intent.ActivityIntentDemo" /> <!-- android:resizeableActivity="true"添加多窗口支持 -->
         <activity android:name=".mvp.ui.activity.workmanager.ActivityWorkManager" />
         <activity android:name=".mvp.ui.activity.lifecycle.ActivityLifecycleDemo" />
         <activity android:name=".mvp.ui.activity.databind.ActivityDataBindDemo" />
@@ -43,6 +49,7 @@
                 android:name="android.appwidget.provider"
                 android:resource="@xml/new_app_widget_info" />
         </receiver>
+
         <activity android:name=".mvp.ui.activity.loader.ActivityLoaderDemo" />
         <activity android:name=".mvp.ui.activity.interact.ActivityReceiver">
 
