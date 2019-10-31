@@ -29,9 +29,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".mvp.ui.activity.binder.BinderDemoActivity"></activity>
         <activity android:name=".mvp.ui.activity.intent.ActivityHidden">
             <intent-filter>
                 <action android:name="com.hnhy.epapp.mvp.ui.activity.intent.ActivityHidden" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -134,6 +136,17 @@
                 android:name="android.net.VpnService.SUPPORTS_ALWAYS_ON"
                 android:value="false" />
         </service>
+        <service android:name=".mvp.ui.activity.binder.MyService">
+            <intent-filter>
+                <action android:name="com.hnhy.epapp.mvp.ui.activity.binder.MyService" />
+            </intent-filter>
+        </service>
+        <service android:name=".mvp.ui.activity.binder.MyAidlService">
+            <intent-filter>
+                <action android:name="com.hnhy.epapp.mvp.ui.activity.binder.MyAidlService" />
+            </intent-filter>
+        </service>
+
     </application>
 
 </manifest>

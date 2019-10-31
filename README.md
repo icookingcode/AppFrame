@@ -21,3 +21,15 @@ LiveData
 WorkManager使用
 
 ## Intent 和Intent 过滤器
+
+## 跨进程通讯 Binder
+Binder框架有3个方面组成：Binder服务端、Binder驱动(IBinder)以及客户端组成  
+两种实现Binder的方式：  
+一、继承Binder  
+二、通过Aidl实现Binder
+
+## 线程间通讯
+Handler机制  
+runOnUiThread()  
+View.post()  
+AsyncTask  
