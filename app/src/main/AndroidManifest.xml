@@ -29,7 +29,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".mvp.ui.activity.binder.BinderDemoActivity"></activity>
+        <activity android:name=".mvp.ui.activity.layout.ActivityLayout"></activity>
+        <activity android:name=".mvp.ui.activity.binder.BinderDemoActivity" />
         <activity android:name=".mvp.ui.activity.intent.ActivityHidden">
             <intent-filter>
                 <action android:name="com.hnhy.epapp.mvp.ui.activity.intent.ActivityHidden" />
@@ -146,7 +147,6 @@
                 <action android:name="com.hnhy.epapp.mvp.ui.activity.binder.MyAidlService" />
             </intent-filter>
         </service>
-
     </application>
 
 </manifest>
