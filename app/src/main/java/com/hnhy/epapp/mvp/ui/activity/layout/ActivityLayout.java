@@ -6,6 +6,8 @@ import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 
 import com.hnhy.epapp.R;
 import com.hnhy.epapp.mvp.model.bean.City;
@@ -23,6 +25,8 @@ public class ActivityLayout extends AppCompatActivity implements CommonViewHolde
 
     @BindView(R.id.rcv)
     RecyclerView mRcv;
+    @BindView(R.id.spinner1)
+    Spinner mSpinner1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +34,35 @@ public class ActivityLayout extends AppCompatActivity implements CommonViewHolde
         setContentView(R.layout.activity_layout);
         ButterKnife.bind(this);
         initView();
+        loadViewStub();
+        initSpinner();
+    }
+
+    private void initSpinner() {
+        ArrayAdapter adapter = ArrayAdapter.createFromResource(
+                this, R.array.colors, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        mSpinner1.setAdapter(adapter);
+        mSpinner1.getViewTreeObserver().addOnGlobalLayoutListener(() ->
+                mSpinner1.setDropDownVerticalOffset(mSpinner1.getHeight())
+        );
+    }
+
+    private void loadViewStub() {
+        new Thread() {
+            @Override
+            public void run() {
+                super.run();
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                runOnUiThread(() -> {
+                    findViewById(R.id.stub_import).setVisibility(View.VISIBLE);
+                });
+            }
+        }.start();
     }
 
     private void initView() {
