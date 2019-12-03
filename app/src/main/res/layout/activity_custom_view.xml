@@ -16,40 +16,55 @@
         app:rightType="string"
         app:title="自定义View" />
 
-    <LinearLayout
+    <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
-            <com.hnhy.epapp.mvp.ui.widget.CircleView
-                android:id="@+id/circle_view"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:circle_radius="@dimen/dimen_100dp"
-                app:inner_circle_color="@color/colorRed"
-                app:middle_circle_color="@color/colorPrimary"
-                app:outer_circle_color="@color/colorGrayDark" />
+                android:orientation="horizontal">
+
+                <com.hnhy.epapp.mvp.ui.widget.CircleView
+                    android:id="@+id/circle_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:circle_radius="@dimen/dimen_100dp"
+                    app:inner_circle_color="@color/colorRed"
+                    app:middle_circle_color="@color/colorPrimary"
+                    app:outer_circle_color="@color/colorGrayDark" />
+
+                <ImageView
+                    android:id="@+id/iv_coffee"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp" />
+            </LinearLayout>
+
+            <com.hnhy.epapp.mvp.ui.widget.MyPieChartView
+                android:id="@+id/pie_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
 
             <ImageView
-                android:id="@+id/iv_coffee"
-                android:layout_width="200dp"
-                android:layout_height="200dp" />
+                android:id="@+id/iv_smile"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/dra_smile"
+                android:tint="@color/colorPrimary" />
+
+            <com.hnhy.epapp.mvp.ui.widget.MapView
+                android:id="@+id/map_view"
+                android:layout_width="match_parent"
+                android:layout_height="150dp" />
+
         </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
 
-        <com.hnhy.epapp.mvp.ui.widget.MyPieChartView
-            android:id="@+id/pie_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
 
-        <com.hnhy.epapp.mvp.ui.widget.MapView
-            android:id="@+id/map_view"
-            android:layout_width="match_parent"
-            android:layout_height="150dp" />
-
-    </LinearLayout>
 </LinearLayout>

@@ -1,9 +1,11 @@
 package com.hnhy.epapp.mvp.ui.activity.custom;
 
 import android.content.Intent;
+import android.graphics.drawable.AnimatedVectorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
+import android.view.View;
 import android.widget.ImageView;
 
 import com.hnhy.epapp.R;
@@ -19,6 +21,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * Created by guc on 2019/9/20.
@@ -77,5 +80,12 @@ public class ActivityCustomView extends BaseActivity {
         }, 1000);
 
 
+    }
+
+    @OnClick(R.id.iv_smile)
+    public void onViewClicked(View view) {
+        ImageView imageView = (ImageView) view;
+        AnimatedVectorDrawable smileDrawable = (AnimatedVectorDrawable) imageView.getDrawable();
+        smileDrawable.start();
     }
 }
