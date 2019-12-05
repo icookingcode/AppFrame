@@ -38,6 +38,8 @@ public class ToolBar extends FrameLayout {
     TextView mTvTitle;
     @BindView(R.id.iv_function_right)
     ImageView mIvFunctionRight;
+    @BindView(R.id.iv_dot_right)
+    ImageView mIvDotRight;
     @BindView(R.id.rl_function_right)
     RelativeLayout mRlFunctionRight;
     @BindView(R.id.rl_function_left)
@@ -77,30 +79,46 @@ public class ToolBar extends FrameLayout {
         initView();
     }
 
+    /**
+     * 设置 右侧消息圆点是否显示
+     *
+     * @param i =  View.VISIBLE/View.GONE
+     */
+    public void setRightDotVisiable(int i) {
+        if (i == View.VISIBLE) {
+            mIvDotRight.setVisibility(View.VISIBLE);
+        } else {
+            mIvDotRight.setVisibility(View.GONE);
+        }
+    }
+
     @SuppressWarnings("unused")
-    public void setOnLeftClickedListener(OnLeftClickedListener onLeftClickedListener){
+    public void setOnLeftClickedListener(OnLeftClickedListener onLeftClickedListener) {
         this.mOnLeftClickedListener = onLeftClickedListener;
     }
+
     @SuppressWarnings("unused")
-    public void setOnRightClickedListener(OnRightClickedListener onRightClickedListener){
+    public void setOnRightClickedListener(OnRightClickedListener onRightClickedListener) {
         this.mOnRightClickedListener = onRightClickedListener;
     }
+
     private void initAttrs(Context context, AttributeSet attrs) {
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.ToolBar);
         mLeftFunType = a.getInt(R.styleable.ToolBar_leftType, 0);
-        mLeftIconId = a.getResourceId(R.styleable.ToolBar_leftIcon,R.drawable.selector_btn_back);
+        mLeftIconId = a.getResourceId(R.styleable.ToolBar_leftIcon, R.drawable.selector_btn_back);
         mTitle = a.getText(R.styleable.ToolBar_title);
-        mTitleTextColor = a.getColor(R.styleable.ToolBar_titleTextColor,getResources().getColor(R.color.colorWhite));
-        mTitleTextSize = a.getDimensionPixelSize(R.styleable.ToolBar_titleTextSize,sp2px(14));
+        mTitleTextColor = a.getColor(R.styleable.ToolBar_titleTextColor, getResources().getColor(R.color.colorWhite));
+        mTitleTextSize = a.getDimensionPixelSize(R.styleable.ToolBar_titleTextSize, sp2px(14));
         mTitleTextSize = px2sp(mTitleTextSize);
         mRightFunType = a.getInt(R.styleable.ToolBar_rightType, 0);
-        mRightIconId = a.getResourceId(R.styleable.ToolBar_rightIcon,R.drawable.selector_btn_more);
+        mRightIconId = a.getResourceId(R.styleable.ToolBar_rightIcon, R.drawable.selector_btn_more);
         mRightFuncitonString = a.getText(R.styleable.ToolBar_rightString);
         isTransBg = a.getBoolean(R.styleable.ToolBar_isTransBg, false);
         a.recycle();
     }
-    private void initView(){
-        switch (mLeftFunType){
+
+    private void initView() {
+        switch (mLeftFunType) {
             case FUNCTION_NONE:
                 mRlFunctionLeft.setVisibility(View.GONE);
                 break;
@@ -112,13 +130,13 @@ public class ToolBar extends FrameLayout {
                 break;
         }
         mIvFunctionLeft.setBackgroundResource(mLeftIconId);
-        mTitle = mTitle == null?"暂无":mTitle;
+        mTitle = mTitle == null ? "暂无" : mTitle;
         mRightFuncitonString = mRightFuncitonString == null ? "新增" : mRightFuncitonString;
         mTvTitle.setText(mTitle);
         mTvRightFunction.setText(mRightFuncitonString);
         mTvTitle.setTextColor(mTitleTextColor);
         mTvTitle.setTextSize(mTitleTextSize);
-        switch (mRightFunType){
+        switch (mRightFunType) {
             case FUNCTION_NONE:
                 mRlFunctionRight.setVisibility(View.GONE);
                 mTvRightFunction.setVisibility(View.GONE);
@@ -135,6 +153,7 @@ public class ToolBar extends FrameLayout {
         }
         if (isTransBg) setBackgroundTrans();
     }
+
     @OnClick({R.id.rl_function_left, R.id.rl_function_right, R.id.tv_right_function})
     public void onViewClicked(View view) {
         switch (view.getId()) {
@@ -149,10 +168,10 @@ public class ToolBar extends FrameLayout {
     }
 
     /**
-     *处理右侧功能点击事件
+     * 处理右侧功能点击事件
      */
     private void onRightClicked() {
-        if (mRightFunType !=FUNCTION_NONE && mOnRightClickedListener!=null){
+        if (mRightFunType != FUNCTION_NONE && mOnRightClickedListener != null) {
             mOnRightClickedListener.onRightClicked();
         }
     }
@@ -161,11 +180,11 @@ public class ToolBar extends FrameLayout {
      * 处理左侧点击事件
      */
     private void onLeftClicked() {
-        if(mLeftFunType == FUNCTION_FINISH){
+        if (mLeftFunType == FUNCTION_FINISH) {
             Activity mCurAty = (Activity) mCxt;
             mCurAty.finish();
-        }else if (mLeftFunType ==FUNCTION_FUN){
-            if (mOnLeftClickedListener!=null){
+        } else if (mLeftFunType == FUNCTION_FUN) {
+            if (mOnLeftClickedListener != null) {
                 mOnLeftClickedListener.onLeftClicked();
             }
         }
@@ -177,20 +196,23 @@ public class ToolBar extends FrameLayout {
     public void setBackgroundTrans() {
         mRlHeaderRoot.setBackground(new ColorDrawable(getResources().getColor(R.color.transparent)));
     }
+
     @SuppressWarnings("SameParameterValue")
-    private int sp2px( float spValue) {
+    private int sp2px(float spValue) {
         float fontScale = mCxt.getResources().getDisplayMetrics().scaledDensity;
         return (int) (spValue * fontScale + 0.5f);
     }
+
     private int px2sp(float pxValue) {
         float fontScale = mCxt.getResources().getDisplayMetrics().scaledDensity;
         return (int) (pxValue / fontScale + 0.5f);
     }
 
-    interface OnLeftClickedListener{
+    interface OnLeftClickedListener {
         void onLeftClicked();
     }
-    interface OnRightClickedListener{
+
+    interface OnRightClickedListener {
         void onRightClicked();
     }
 }
