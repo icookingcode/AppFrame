@@ -52,12 +52,27 @@
             <enum name="invisible" value="1" />
         </attr>
     </declare-styleable>
-    <attr name="title" format="reference|string"/>
-    <attr name="titleTextColor" format="color"/>
+    <attr name="title" format="reference|string" />
+    <attr name="titleTextColor" format="color" />
     <declare-styleable name="ViewRichText">
         <attr name="title" />
-        <attr name="content"  />
+        <attr name="content" />
         <attr name="titleTextColor" />
         <attr name="contentTextColor" format="color" />
+    </declare-styleable>
+    <!--支持圆角原型ImageView-->
+    <declare-styleable name="NiceImageView">
+        <attr name="is_circle" format="boolean" />
+        <attr name="is_cover_src" format="boolean" />
+        <attr name="corner_radius" format="dimension" />
+        <attr name="corner_top_left_radius" format="dimension" />
+        <attr name="corner_top_right_radius" format="dimension" />
+        <attr name="corner_bottom_left_radius" format="dimension" />
+        <attr name="corner_bottom_right_radius" format="dimension" />
+        <attr name="border_width" format="dimension" />
+        <attr name="border_color" format="color" />
+        <attr name="inner_border_width" format="dimension" />
+        <attr name="inner_border_color" format="color" />
+        <attr name="mask_color" format="color" />
     </declare-styleable>
 </resources>
