@@ -1,4 +1,4 @@
-package com.hnhy.epapp.utils;
+package com.hnhy.ui.util;
 
 import android.app.Activity;
 import android.content.Context;
