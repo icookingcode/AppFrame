@@ -31,7 +31,7 @@ public class ActivityFunctionSelect extends BaseActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.btn_weather_report, R.id.btn_bluetooth_usage, R.id.btn_custom_view, R.id.btn_vpn_demo, R.id.btn_fragment, R.id.btn_interact, R.id.btn_loader, R.id.btn_data_binding, R.id.btn_lifecycle, R.id.btn_work_manager, R.id.btn_intent, R.id.btn_binder, R.id.btn_layout})
+    @OnClick({R.id.btn_weather_report, R.id.btn_bluetooth_usage, R.id.btn_custom_view, R.id.btn_vpn_demo, R.id.btn_fragment, R.id.btn_interact, R.id.btn_loader, R.id.btn_data_binding, R.id.btn_lifecycle, R.id.btn_work_manager, R.id.btn_intent, R.id.btn_binder, R.id.btn_layout, R.id.btn_rx_java})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_weather_report:
@@ -72,6 +72,9 @@ public class ActivityFunctionSelect extends BaseActivity {
                 break;
             case R.id.btn_layout:
                 startActivity(new Intent(this, ActivityLayout.class));
+                break;
+            case R.id.btn_rx_java:
+                startActivity(new Intent(this, ActivityRxJavaDemo.class));
                 break;
         }
     }

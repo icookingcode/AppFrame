@@ -125,6 +125,7 @@
         <activity android:name=".mvp.ui.activity.weather.ActivityWeatherReport" />
         <activity android:name=".mvp.ui.activity.bluetooth.ActivityBluetoothDevices" />
         <activity android:name=".mvp.ui.activity.custom.ActivityCustomView" />
+        <activity android:name=".mvp.ui.activity.ActivityRxJavaDemo" />
 
         <service
             android:name=".mvp.ui.activity.vpn.MyVpnService"
