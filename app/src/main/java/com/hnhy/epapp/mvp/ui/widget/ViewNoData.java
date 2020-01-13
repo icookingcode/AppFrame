@@ -32,6 +32,7 @@ public class ViewNoData extends FrameLayout {
     private int mHintIconId;
     private boolean isMulLineHint;
     private int mTopMargin;
+    private int mIconSize;
 
     public ViewNoData(@NonNull Context context) {
         this(context, null);
@@ -52,6 +53,7 @@ public class ViewNoData extends FrameLayout {
         mHint2 = a.getText(R.styleable.ViewNoData_hint2);
         isMulLineHint = a.getBoolean(R.styleable.ViewNoData_mulLineHint, true);
         mTopMargin = a.getDimensionPixelSize(R.styleable.ViewNoData_topIconMargin, dp2px(160));
+        mIconSize = a.getDimensionPixelSize(R.styleable.ViewNoData_iconSize, dp2px(100));
         a.recycle();
         initView();
     }
@@ -59,7 +61,8 @@ public class ViewNoData extends FrameLayout {
     private void initView() {
         LinearLayout.LayoutParams lp = (LinearLayout.LayoutParams) mViewPicture.getLayoutParams();
         lp.setMargins(0, mTopMargin, 0, 0);
-
+        lp.width = mIconSize;
+        lp.height = mIconSize;
         mViewPicture.setBackgroundResource(mHintIconId);
         mTvHint1.setText(mHint1 == null ? "暂无" : mHint1);
         mTvHint2.setText(mHint2 == null ? "暂无" : mHint2);

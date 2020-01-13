@@ -7,7 +7,7 @@ import android.content.SharedPreferences.Editor;
 import com.hnhy.framework.Engine;
 
 public class SharedPreferencesManager {
-    private final static String SP_NAME_DEFAULT = "sp_mjkh_cache";
+    private final static String SP_NAME_DEFAULT = "sp_cache";
     private static final String KEY_FIRST_OPEN = "key_first_open";
     private static final String KEY_USERNAME = "key_username";
     private static final String KEY_PASSWORD = "key_password";

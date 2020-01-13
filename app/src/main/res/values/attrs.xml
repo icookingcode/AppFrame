@@ -8,6 +8,7 @@
         <attr name="hint2" format="reference|string" />
         <attr name="mulLineHint" format="boolean" />
         <attr name="topIconMargin" format="dimension" />
+        <attr name="iconSize" format="dimension" />
     </declare-styleable>
 
     <declare-styleable name="ToolBar">
@@ -27,6 +28,7 @@
         </attr>
         <attr name="rightIcon" format="reference"/>
         <attr name="rightString" format="reference|string"/>
+        <attr name="isTransBg" format="boolean" />
     </declare-styleable>
 
     <declare-styleable name="MyPieChartView">
