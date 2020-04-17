@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>jQuery学习一</title>
+    <link href="js.css" rel="stylesheet" type="text/css">
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script src="./jQuery-part1.js"></script>
+</head>
+<body>
+<div id="catalog">
+    <h1>目录</h1>
+    <ul>
+        <li><a href="#cap1">基础语法</a></li>
+        <li><a href="#cap2">jQuery HTML</a></li>
+        <li><a href="#cap3">jQuery 遍历</a></li>
+        <li><a href="#cap4">jQuery AJAX</a></li>
+        <li><a href="#cap5">jQuery 其他</a></li>
+    </ul>
+</div>
+
+<h2 id="cap1">基础语法： $(selector).action()</h2>
+<p id="p1">jQuery学习一：基础用法</p>
+<button id="btn1">点我,我会变</button>
+
+<h2 id="cap2">jQuery HTML</h2>
+<p id="p2">我的名字叫：<b>谷超</b></p>
+<p id="p3">copy</p>
+<button id="btn2">显示文本</button>
+<button id="btn3">显示HTML</button>
+
+<p><a href="https://blog.csdn.net/qq_31028313/article/details/100034674" id="guc_csdn"
+      target="_blank">谷超的CSDN</a></p>
+<p id="p4">show</p>
+<button id="btn4">显示href属性的值</button>
+<button id="btn5">改变href属性的值</button>
+<p id="p5">添加元素</p>
+<button id="btn6">append()结尾添加</button>
+<button id="btn7">prepend()开头添加</button>
+<button onclick="appendText()">追加文本</button>
+<br><br>
+<img class="custom" src="../i/demo1.jpg"></img>
+<img class="custom2" src="../i/demo1.jpg"></img>
+<br>
+<br>
+<button onclick="afterText()">图片后添加文本</button>
+<button id="btn8">移除大图</button>
+<button id="btn10">移除大图二</button>
+<button id="btn9">清除所有</button>
+<br>
+<div id="div1">这是一些重要的文字</div>
+<button id="btn11">为元素添加 class="important"</button>
+<button id="btn12">为元素添加 class="blue"</button>
+<button id="btn13">toggleClass="blue"</button>
+
+<h2 id="cap3">jQuery 遍历</h2>
+<ul>
+    <li>jQuery parent() 方法</li>
+    获取元素的直接父元素
+</ul>
+<div class="ancestors" style="width:500px;">div (祖父元素)
+    <p>p (父元素)
+        <span id="span1">span</span>
+    </p>
+</div>
+<ul>
+    <li>jQuery parents() 方法</li>
+    一路向上直到文档的根元素 (html) 过滤div
+</ul>
+<div class="ancestors">
+    <div style="width:500px;">div (曾祖父元素)
+        <ul>ul (祖父元素)
+            <li>li (父元素)
+                <span id="span2">span</span>
+            </li>
+        </ul>
+    </div>
+</div>
+<ul>
+    <li>jQuery parentsUntil() 方法</li>
+    回介于两个给定元素之间的所有祖先元素
+</ul>
+<div class="ancestors">
+    <div style="width:500px;">div (曾祖父元素)
+        <ul>ul (祖父元素)
+            <li>li (父元素)
+                <span id="span3">span</span>
+            </li>
+        </ul>
+    </div>
+</div>
+<ul style="color:red;">后代
+    <li>jQuery children() 方法(返回被选元素的所有直接子元素)</li>
+    <li>jQuery children("selector") 方法(可选参数来过滤对子元素的搜索)</li>
+    <li>jQuery find("selector") 方法(返回被选元素的后代元素，一路向下直到最后一个后代)</li>
+</ul>
+<ul style="color:red;">同胞
+    <li>jQuery siblings() 方法(返回被选元素的所有同胞元素)</li>
+    <li>jQuery siblings("selector") 方法(可选参数来过滤对同胞元素的搜索)</li>
+    <li>jQuery next() 方法</li>
+    <li>jQuery nextAll() 方法</li>
+    <li>jQuery nextUntil() 方法</li>
+    <li>jQuery prev() 方法</li>
+    <li>jQuery prevAll() 方法</li>
+    <li>jQuery prevUntil() 方法</li>
+</ul>
+<ul style="color:red;">过滤
+    <li>jQuery first() 方法（返回被选元素的首个元素）</li>
+    <li>jQuery last() 方法（返回被选元素的末元素）</li>
+    <li>jQuery eq(index) 方法（返回被选元素中带有指定索引号的元素）</li>
+    <li>jQuery filter("selector") 方法（允许您规定一个标准。不匹配这个标准的元素会被从集合中删除，匹配的元素会被返回）</li>
+    <li>jQuery not("selector") 方法（与filter方法相反）</li>
+</ul>
+
+<h2 id="cap4">jQuery <abbr title="Asynchronous JavaScript and XML">AJAX</abbr></h2>
+<div id="div_load_expression"></div>
+<div id="div_load"></div>
+<p id="p6">show</p>
+<button id="btn14">发送一个 HTTP GET 请求并获取返回结果</button>
+<p id="p7">show</p>
+<button id="btn15">发送一个 HTTP POST 请求页面并获取返回内容</button>
+
+<h2 id="cap5">jQuery 其他</h2>
+<p>jQuery noConflict() 方法会释放对 $ 标识符的控制，这样其他脚本就可以使用它了</p>
+<!-- 返回顶部 -->
+<div class="pos_fixed">
+    <a class="option-box" href="#">
+        <img src="../i/gotop.png">
+        <span class="show-txt">
+			返回
+			<br>
+			顶部
+			</span>
+    </a>
+</div>
+</body>
+</html>

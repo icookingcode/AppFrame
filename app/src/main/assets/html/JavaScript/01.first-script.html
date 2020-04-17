@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <!-- 每30秒刷新网页
+    <meta http-equiv="refresh" content="10">  -->
+    <title>第一个javaScript</title>
+    <!-- CSS 样式-内部样式表 -->
+    <link href="mystyle.css" rel="stylesheet" type="text/css">
+    <style type="text/css">
+			h1{
+				color:orange;
+				text-align:center;
+			}
+			
+			#para1
+			{
+				font-size:20px;
+				color:red;
+			}
+			.center
+			{
+				text-align:center;
+			}
+
+    </style>
+
+    <script>
+		
+		function showDate(){
+			document.getElementById("show_date").innerHTML=Date();
+		}
+		
+		function increaseRefreshCount(){
+			document.getElementById("count").innerHTML="我刷新了";
+		}
+
+    </script>
+
+</head>
+
+<body>
+<h1>我的第一个JavaScript程序</h1>
+<p class="center" id="show_date">这是一个段落</p>
+<button onclick="showDate()" type="button">显示日期</button>
+
+<hr/>
+<p id="para1">注意：点击显示日期显示当前时间</p>
+
+<h1> CSS text-align示例</h1>
+<p class="date">2019年6月21号</p>
+<p class="main" style="text-indent:20px;">“<i>当我年轻的时候，我梦想改变这个世界；<sup>①</sup></i>当我成熟以后，我发现我不能够改变这个世界，我将目光缩短了些，决定只改变我的国家；当我进入暮年以后，我发现我不能够改变我们的国家，我的最后愿望仅仅是改变一下我的家庭，但是，这也不可能。当我现在躺在床上，行将就木时，我突然意识到：如果一开始我仅仅去改变我自己，然后，我可能改变我的家庭；在家人的帮助和鼓励下，我可能为国家做一些事情；然后，谁知道呢?我甚至可能改变这个世界。”
+</p>
+<p><b>注意：</b> 重置浏览器窗口大小查看 &quot;justify&quot; 是如何工作的。</p>
+<p>My favorite color is
+    <del>blue</del>
+    <ins>red</ins>
+    !
+</p>
+<hr/>
+
+<p><i id="count">...</i></p>
+<p>
+    <button onclick="increaseRefreshCount()" type="button">刷新一下</button>
+</p>
+<hr/>
+<a href="../html.html#tips" style="text-decoration:none"><p>另一个练习</p></a>
+
+<a href="../html_events.html"><p>HTML 事件></p></a>
+</body>
+</html>

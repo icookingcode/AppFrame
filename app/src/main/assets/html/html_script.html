@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>HTML 脚本</title>
+</head>
+<body>
+<script>
+		document.write("Hello World!");
+		function myFunction(){
+			document.getElementById("show").innerHTML="Hello JavaScript!";
+		}
+		
+		function setStyle(){
+		x=document.getElementById("change_text_color"); // 找到元素
+		x.style.color="#FF0000";
+		}
+
+</script>
+<!-- 不支持JavaScript的提示-->
+<noscript>抱歉，你的浏览器不支持 JavaScript!</noscript>
+
+<p id="show">JavaScript 可以触发事件，就像按钮点击。
+<p>
+
+    <button onclick="myFunction()" type="button">点我</button>
+
+<hr/>
+<p id="change_text_color">JavaScript 能改变 HTML 元素的样式。</p>
+<button onclick="setStyle()" type="button">Change</button>
+
+<hr/>
+<h4>实体字符</h4>
+<p>&lt; &#60;&nbsp;&nbsp;&nbsp;&gt;a&#768;&yen;&trade;&reg;&copy;</p>
+
+<hr/>
+<h4>统一资源定位器(<abbr title="Uniform Resource Locators">URL</abbr>)</h4>
+<p>格式：scheme://host.domain:port/path/filename</p>
+<ul style="list-style-type:square">
+    <li>scheme - 定义因特网服务的类型。最常见的类型是 http</li>
+    <li>host - 定义域主机（http 的默认主机是 www）</li>
+    <li>domain - 定义因特网域名，比如 runoob.com</li>
+    <li>:port - 定义主机上的端口号（http 的默认端口号是 80）</li>
+    <li>path - 定义服务器上的路径（如果省略，则文档必须位于网站的根目录中）。</li>
+    <li>filename - 定义文档/资源的名称</li>
+</ul>
+<p style="color:red"><b>注意：</b>URL 只能使用 ASCII 字符集.</p>
+
+<iframe height="800px" src="https://www.runoob.com/html/html-quicklist.html" width="100%"></iframe>
+
+
+</body>
+</html>

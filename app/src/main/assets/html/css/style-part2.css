@@ -1,0 +1,333 @@
+@charset "utf-8";
+body {margin:50px 0px;}
+div.selector p /*为div下的p元素设置样式*/
+{
+  background-color:yellow;
+}
+div.selector >p /*为div直接子元素p设置样式*/
+{
+  background-color:red;
+}
+div.selector +p /*位于 <div> 元素后的第一个 <p> 元素*/
+{
+  background-color:green;
+}
+div.selector ~p /*<div> 元素之后的所有相邻兄弟元素 <p> :*/
+{
+  background-color:blue;
+}
+
+/*selector:pseudo-class {property:value;}*/
+a.two:link {color:#FF0000;background-color:#98bf21;} /* 未访问的链接 */
+a.two:visited {color:#00FF00;background-color:#98bf21;} /* 已访问的链接 */
+a.two:hover {color:#FF00FF;background-color:#7A991A;} /* 鼠标划过链接 */
+a.two:active {color:#0000FF;background-color:#7A991A;} /* 已选中的链接 */
+
+/*CSS类也可以使用伪类:selector.class:pseudo-class {property:value;}*/
+a.red:visited {color:#FF0000;}
+
+code{
+	background-color:#C8C8C8;
+}
+
+b:first-child{ color:blue;}/*任何元素的第一个<b>元素*/
+b > i:first-child{color:yellow;}/*b元素中的第一个i元素*/
+b:first-child i{color:red}/*任何元素的第一个<b>元素中所有的i*/
+q:lang(no){ /*为q元素lang类属性值为no*/
+	quotes:"~" "~";
+}
+input:focus{background-color:#C8C8C8;}
+h2:before{content:url(../i/pointer.png);}
+
+/*导航栏样式*/
+a.one:link {color:blue;background-color:#FFFFFF;} /* 未访问的链接 */
+a.one:visited {color:blue;background-color:#FFFFFF;} /* 已访问的链接 */
+a.one:hover {color:blue;background-color:#FFFFFF;} /* 鼠标划过链接 */
+a.one:active {color:blue;background-color:#FFFFFF;} /* 已选中的链接 */
+ul.none
+{
+	list-style-type:none;
+	margin:0;
+	padding:0;
+	width: 200px;
+    background-color: #f1f1f1;
+	border: 1px solid #555;
+}
+li.vertial a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+/* 鼠标移动到选项上修改背景颜色 */
+li a:hover:not(.active){
+    background-color: #555;
+    color: white;
+}
+li a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+li.center {
+    text-align: center;
+    border-bottom: 1px solid #555;
+}
+li.center:last-child {
+    border-bottom: none;
+}
+
+/*导航栏样式2 水平*/
+ul.none2
+{
+	list-style-type:none;
+	margin:0;
+	padding:8px 0px;
+	background-color: #f1f1f1;
+}
+li.inline
+{
+	display:inline;
+}
+li.inline a {
+    display: inline;
+	width:60px;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+a.no-decoration{
+	display: inline;
+	width:60px;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+/*导航栏样式3 水平*/
+ul.none3
+{
+	list-style-type:none;
+	margin:0;
+	padding:0;
+	background-color: #f1f1f1;
+	overflow:hidden;
+	position: fixed;
+    top: 0;
+	width:100%;
+}
+li.float
+{
+	float:left;
+	text-align:center;
+	border-right: 1px solid #bbb;
+}
+li.float:last-child{
+	border-right:none;
+}
+li.right
+{
+	float:right;
+}
+li.float a
+{
+	display:block;
+	width:70px;
+	padding: 8px 16px;
+    text-decoration: none;
+}
+
+.container{
+	background-color:#ffffff;
+	margin:20px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+.desc {
+    padding: 15px;
+    text-align: center;
+}
+
+/*CSS提示工具*/
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black; /* 悬停元素上显示点线 */
+}
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+
+    /* 定位 */
+    position: absolute;
+    z-index: 1;
+	top:-5px;
+	left:110%;
+}
+.tooltip .tooltiptext-top{
+	visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+
+	/*淡入效果*/
+	opacity: 0;
+    transition: opacity 1s;
+	
+    /* 定位 顶部居中 */
+    position: absolute;
+    z-index: 1;
+	bottom:110%;
+	left:50%;
+	margin-left:-60px;
+}
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+.tooltip:hover .tooltiptext-top {
+    visibility: visible;
+	opacity: 1;
+}
+.tooltip .tooltiptext:after {
+    content: " ";
+    position: absolute;
+    right: 100%; /* 提示工具左侧箭头 */
+    top: 50%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent black transparent transparent ;
+}
+.tooltip .tooltiptext-top:after {
+    content: " ";
+    position: absolute;
+    top: 100%; /* 提示工具底部箭头 */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+}
+/*图片廊样式*/
+div.img{
+	margin:5px;
+	border:1px solid #CCC;
+/*	float:left;
+	width:180px; */
+}
+div.img:hover{
+	border:1px solid #777;
+}
+div.img img{
+	width:100%;
+	height:auto;
+}
+img.alph40{
+	opacity:0.4;
+}
+img.alph40:hover{
+	opacity:1;
+}
+div.desc {
+	padding:15px;
+	text-align:center;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.responsive {
+    padding: 0 6px;
+    float: left;
+    width: 24.99999%;
+}
+
+@media only screen and (max-width: 700px){
+    .responsive {
+        width: 49.99999%;
+        margin: 6px 0;
+    }
+}
+
+@media only screen and (max-width: 500px){
+    .responsive {
+        width: 100%;
+    }
+}
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/*图像拼合技术*/
+img.home {
+    width: 46px;
+    height: 44px;
+    background: url(../i/img_navsprites.gif) 0 0;
+}
+img.next {
+    width: 43px;
+    height: 44px;
+    background: url(../i/img_navsprites.gif) -91px 0;
+}
+img.prev {
+    width: 43px;
+    height: 44px;
+    background: url(../i/img_navsprites.gif) -47px 0;
+}
+/*属性选择器*/
+[abc]{
+	background-color:white;
+}
+[abc=red]{
+	background-color:red;
+}
+[abc=green]{
+	background-color:green;
+}
+[abc ~=green]{
+	background-color:green;
+}
+[lang|=en]
+{
+	color:blue;
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>HTML 布局</title>
+    <base href="./" target="_blank">
+    <style>
+		a{
+			text-decoration:none;
+			color:black;
+		}
+		ul.no-style{
+			list-style-type:none;
+			padding-left:0px;
+		}
+		a:link {color:black;}      /* 未访问链接*/
+		a:visited {color:black;}  /* 已访问链接 */
+		a:hover {color:#FF00FF;text-decoration:underline;background-color:#00FF00;}  /* 鼠标移动到链接上 */
+		a:active {color:#0000FF;text-decoration:underline;background-color:#00FF00;}  /* 鼠标点击时 */
+
+    </style>
+    <script>
+    </script>
+</head>
+
+<body style="background-image:url('./JavaScript/paper.gif')">
+<div id="container" style="width:100%;">
+    <div id="header" style="background-color:#FFA500;">
+        <h1 style="margin-bottom:0;">我的HTML练习</h1></div>
+
+    <div id="menu" style="background-color:#FFD700;width:100px;float:left;padding-left:10px;">
+        <ul class="no-style">
+            <li><a href="html.html">首页</a></li>
+            <li><a href="html_css.html">HTML</a></li>
+            <li><a href="css/css.html">CSS</a></li>
+            <li><a href="JavaScript/01.first-script.html">JavaScript</a></li>
+            <li><a href="html_events.html">HTML 事件</a></li>
+            <li><a href="html_frame.html">iframe</a></li>
+            <li><a href="html_script.html">HTML 脚本</a></li>
+        </ul>
+
+    </div>
+    <div id="content" style="background-color:#EEEEEE;width:80%;float:left;padding:20px;">
+
+        <form action="">
+            Username: <input name="user" type="text"><br><br>
+            Password: <input name="password" type="password"><br><br>
+            <input type="checkbox" value="rem_pwd">是否记住密码?<br>
+            <input type="submit" value="登陆">
+        </form>
+
+        <hr/>
+        <h4>单选按钮</h4>
+        <form>
+            <input checked="checked" name="sex" type="radio" value="male">Male<br>
+            <input name="sex" type="radio" value="female">Female<br>
+        </form>
+        <hr/>
+        <h4>下拉列表</h4>
+        <table border="0">
+            <tr>
+                <td>
+                    <form action="">
+                        <select name="cars">
+                            <option value="unselected">未选择</option>
+                            <option value="volvo">Volvo</option>
+                            <option value="saab">Saab</option>
+                            <option value="fiat">Fiat</option>
+                            <option value="audi">Audi</option>
+                        </select>
+                    </form>
+                </td>
+                <td>
+                    <form action="">
+                        <select name="cars">
+                            <option value="unselected">未选择</option>
+                            <option value="volvo">Volvo</option>
+                            <option value="saab">Saab</option>
+                            <option selected value="fiat">Fiat</option>
+                            <option value="audi">Audi</option>
+                        </select>
+                    </form>
+                </td>
+            </tr>
+        </table>
+        <hr/>
+        <h4>文本域</h4>
+        <textarea cols="30" rows="5">
+我是一个文本框
+</textarea>
+
+    </div>
+    <div id="footer" style="background-color:#FFA500;clear:both;text-align:center;">
+        版权 © guchao.com
+    </div>
+</div>
+
+</body>
+</html>

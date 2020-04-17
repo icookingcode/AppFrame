@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JS学习一</title>
+    <script src="js.js"></script>
+    <link href="js.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<h2>JavaScript：直接写入 HTML 输出流</h2>
+<script>
+			document.write("<p>这是通过js写的一段</p>");
+
+</script>
+<h2>JavaScript：对事件的反应</h2>
+<button onclick="alert('hello')" type="button">点我</button>
+<h2>JavaScript：改变 HTML 内容&&样式</h2>
+<p id="demo">JavaScript 能改变 HTML 元素的内容。</p>
+<button onclick="myFunction1()" type="button">改变内容</button>
+<button onclick="changeStyle()" type="button">改变样式</button>
+<br>
+<img height="180" id="myimage" onclick="changeImage()" src="../i/pic_bulboff.gif" width="100">
+<p>点击灯泡就可以打开或关闭这盏灯</p>
+<input id="demo2" placeholder="请输入数字" type="text">
+<button onclick="validateInput()" type="button">点击这里</button>
+<h2>JavaScript：输出</h2>
+<script>
+			window.alert(5 + 6);
+
+</script>
+<ul>
+    <li><code>window.alert()</code>弹出警告框</li>
+    <li><code>document.getElementById("demo").innerHTML = "段落已修改。";</code>修改元素内容</li>
+    <li><code>document.write(Date());</code>写到html文档</li>
+    <li><code>console.log(c);</code>写到控制台</li>
+</ul>
+<script>
+			a = 5;
+			b = 6;
+			c = a + b;
+			console.log(c);
+
+</script>
+<h2>JavaScript：语法</h2>
+<p id="demo3">算数运算</p>
+<script>
+			var x, y, z;
+			x = 5;
+			y = 6;
+			z = (x + y) * 10;
+			document.getElementById("demo3").innerHTML = z;
+
+</script>
+<p id="demo4">算数运算</p>
+<script>
+			var x, y, z;
+			x = 5;
+			y = "volvo";
+			z = x + y;
+			document.getElementById("demo4").innerHTML = z;
+
+</script>
+<p id="myPar">我是一个段落。</p>
+<div id="myDiv">我是一个div。</div>
+<p>
+    <button onclick="myFunction(myPar,myDiv,this)" type="button">点击这里</button>
+</p>
+<h2>JavaScript：数据类型</h2>
+<ul>
+    <li>基本类型：
+        <ul>
+            <li>字符串（String）</li>
+            <li>数字（Number）</li>
+            <li>布尔（Boolean）</li>
+            <li>对空（Null）</li>
+            <li>未定义（Undefined）</li>
+            <li>Symbol</li>
+        </ul>
+    </li>
+    <li>引用数据类型：
+        <ul>
+            <li>对象（Object）</li>
+            <li>数组（Array）</li>
+            <li>函数（Function）</li>
+        </ul>
+    </li>
+</ul>
+<h2>JavaScript：函数</h2>
+
+<pre>
+	function functionname()
+	{
+		// 执行代码
+	}
+	function functionname(arg1,arg2){
+		//执行代码
+	}
+	function functionname()
+	{
+		var x=5;
+		return x;//返回值
+	}
+		</pre>
+<h2>JavaScript：作用域</h2>
+<ul>
+    <li>局部变量在函数执行完毕后销毁</li>
+    <li>全局变量在页面关闭后销毁</li>
+    <li>函数参数只在函数内起作用，是局部变量</li>
+</ul>
+<p>注：如果变量在函数内没有声明（没有使用 var 关键字），该变量为全局变量。</p>
+
+<h2>JavaScript：事件</h2>
+<button onclick="getElementById('demo5').innerHTML=Date()">现在的时间是?</button>
+<p id="demo5"></p>
+<button onclick="showNowTime(demo6)">显示时间</button>
+<p id="demo6"></p>
+<button onclick="this.innerHTML=Date()">显示当前时间</button>
+<button onmouseout="this.innerHTML='鼠标移开了'" onmouseover="this.innerHTML='鼠标移动到上面了'">常见HTML事件
+</button>
+<h2>JavaScript：字符串</h2>
+<p id="demo7"></p>
+<p id="demo8"></p>
+<p>=== 为绝对相等，即数据类型与值都必须相等</p>
+<p id="demo9"></p>
+<p id="demo10"></p>
+<p id="demo11"></p>
+<p id="demo12"></p>
+<script>testString();</script>
+<h2>JavaScript：运算符</h2>
+<ul>
+    <li>运算符 = 用于赋值</li>
+    <li>运算符 + 用于加值</li>
+</ul>
+<ul>算术运算符
+    <li> + - * / %</li>
+    <li>++</li>
+    <li>--</li>
+</ul>
+<ul>赋值运算符
+    <li>= += -= *= /= %=</li>
+</ul>
+
+<ul>+ 可用于字符串拼接</ul>
+<h2>JavaScript：比较和逻辑运算符</h2>
+<ul>比较运算符
+    <li> == === &lt; &gt;</li>
+    <li> != !== &lt;= &gt;=</li>
+</ul>
+<ul>逻辑运算符
+    <li> && || !</li>
+</ul>
+<ul>条件运算符
+    <li><code>variablename=(condition)?value1:value2;<br>eg:voteable=(age<18)?"年龄太小":"年龄已达到";</code>
+    </li>
+</ul>
+<h2>JavaScript：条件语句/switch选择语句/for循环/while循环</h2>
+<p id="demo13"></p>
+<button onclick="greeting(this);getWeekday(demo13);">问候语</button>
+<h2>JavaScript：break/continue/标签</h2>
+<pre>
+		label:
+		break label;/continue label;
+		</pre>
+<ul>
+    <li>continue 语句（带有或不带标签引用）只能用在循环中。</li>
+    <li>break 语句（不带标签引用），只能用在循环或 switch 中。</li>
+</ul>
+<h2>JavaScript：类型转换</h2>
+<ul>5种不同的数据类型
+    <li>string</li>
+    <li>number</li>
+    <li>boolean</li>
+    <li>object</li>
+    <li>function</li>
+</ul>
+<ul>3种对象类型
+    <li>Object</li>
+    <li>Date</li>
+    <li>Array</li>
+</ul>
+<ul>2种不包含任何值的数据类型
+    <li>null</li>
+    <li>undefined</li>
+</ul>
+<p style="background-color:#ff00f0;">typeof 可获取数据类型<br>constructor属性返回变量的构造函数</p>
+<h2>JavaScript：正则表达式</h2>
+<p><b><em>语法：</em></b>/正则表达式主体/修饰符(可选)</p>
+<ul><b>修饰符</b>
+    <li>i 忽略大小写匹配</li>
+    <li>g 执行全局匹配（查找所有而非找到第一个后停止）</li>
+    <li>m 执行多行匹配</li>
+</ul>
+<p id="demo14"></p>
+<p id="demo15"></p>
+<p id="demo16"></p>
+<script>testRegex();</script>
+<ul>
+    <li>使用 RegExp 对象</li>
+    <li>使用 test() <code>eg:/e/.test("The best things in life are free!")</code></li>
+    <li>使用 exec() <code>eg:/e/.exec("The best things in life are free!");</code></li>
+</ul>
+<h2>JavaScript：错误</h2>
+<p>throw <br>throw <i>exception</i> <br> try catch finally</p>
+请输入一个5到20之间的数字：
+<input id="demo17" type="text">
+<button onclick="testCustomException(demo17,message)" type="button">测试输入</button>
+<p id="message"></p>
+<h2>JavaScript：严格模式</h2>
+<p><code>"use strict";//全局"use strict"声明，不允许使用未声明的变量</code></p>
+<h2>JavaScript：表单</h2>
+<form action="#" method="post"
+      name="myForm" onsubmit="return validateForm()">
+    名字: <input name="fname" placeHolder="请输入名字" type="text">
+    <input type="submit" value="提交">
+</form>
+<form action="#" method="post">
+    <input name="fname" placeHolder="通过属性来添加非空校验" required="required" type="text">
+    <input type="submit" value="提交">
+</form>
+
+<input id="input1" max="300" min="100" required type="number">
+<button onclick="validateInputWithApi()">验证</button>
+<p id="demo18"></p>
+</body>
+</html>

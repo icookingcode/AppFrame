@@ -1,0 +1,165 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta content="10" http-equiv="refresh">
+    <title>HTML 事件</title>
+    <style>
+	body{
+		background-image:url('./JavaScript/paper.gif');
+		margin:20px;
+	}
+	thead {color:green;}
+	tbody {color:black;}
+	tfoot {color:red;}
+
+    </style>
+
+    <script>
+	function showMsg(){
+		alert("窗口大小发生了改变");
+	}
+	
+	function checkForm(){
+		var field1 = document.getElementById("field1").value ;
+		var field2 = document.getElementById("field2").value ;
+		alert("表单数据检查:field1="+field1 +" field2="+field2);
+	}
+
+    </script>
+
+</head>
+
+<body>
+<p> 窗体大小发生变化是弹出提示信息</p>
+<hr/>
+
+<form action="" onsubmit="checkForm()">
+    第一个名字: <input id="field1" type="text" value="a"><br>
+    最后一个名字: <input id="field2" type="text" value="b"><br>
+    <input type="submit" value="提交">
+</form>
+
+<hr/>
+<p>
+    一个动图:
+    <img alt="Computer man" height="48" src="./i/hackanm.gif" style="float:right" width="48">
+</p>
+<hr/>
+<h4>表格</h4>
+<table border="1" cellpadding="10">
+    <caption>得分汇总</caption>
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Points</th>
+    </tr>
+    <tr>
+        <td>Eve</td>
+        <td>Jackson</td>
+        <td>94</td>
+    </tr>
+</table>
+
+<table border="1" cellpadding="10" cellspacing="0">
+    <caption>得分汇总</caption>
+    <thead>
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Points</th>
+    </tr>
+    </thead>
+    <tr>
+        <td>Eve</td>
+        <td>Jackson</td>
+        <td>94</td>
+    </tr>
+</table>
+
+<hr/>
+<h4>列表</h4>
+<h5>无序列表&&嵌套列表</h5>
+<table border="1" cellpadding="10" cellspacing="0">
+    <tr>
+        <td>
+            <ul>
+                <li>Coffee</li>
+                <li>Tea
+                    <ul>
+                        <li>Black tea</li>
+                        <li>Green tea
+                            <ul>
+                                <li>China</li>
+                                <li>Africa</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>Milk</li>
+
+        </td>
+        <td>
+            <ul style="list-style-type:circle">
+                <li>apples</li>
+                <li>bananas</li>
+                <li>pineapples</li>
+            </ul>
+        </td>
+        <td>
+            <ul style="list-style-type:square">
+                <li>apples</li>
+                <li>bananas</li>
+                <li>pineapples</li>
+            </ul>
+        </td>
+    </tr>
+</table>
+
+<h5>有序列表&&自定义列表</h5>
+<table border="1" cellpadding="10" cellspacing="0">
+    <tr>
+        <td>
+            <ol>
+                <li>Coffee</li>
+                <li>Tea</li>
+                <li>Milk</li>
+            </ol>
+        </td>
+        <td>
+            <ol start="10">
+                <li>Coffee</li>
+                <li>Tea</li>
+                <li>Milk</li>
+            </ol>
+        </td>
+        <!-- type :大写A 小写a 罗马数字I 小写罗马数字i  -->
+        <td>
+            <ol start="5" type="I">
+                <li>Coffee</li>
+                <li>Tea</li>
+                <li>Milk</li>
+            </ol>
+        </td>
+        <td>
+            <dl>
+                <dt>Coffee</dt>
+                <dd>- black hot drink</dd>
+                <dt>Milk</dt>
+                <dd>- white cold drink</dd>
+            </dl>
+        </td>
+    </tr>
+</table>
+<hr/>
+<h4>区块</h4>
+
+<div>
+    div（块级元素）中的文字；<span> span（内联元素）中的文字。</span>
+</div>
+
+<a href="./html_layout.html"><h4>布局</h4></a>
+
+</body>
+
+</html>

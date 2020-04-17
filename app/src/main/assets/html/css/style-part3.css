@@ -1,0 +1,102 @@
+@charset "utf-8"
+
+.common-margin{
+	margin:20px;
+}
+
+body{
+				counter-reset: section;
+}
+h2::before {
+	counter-increment: section;
+	content: "第" counter(section) "节: ";
+}
+h2 {
+  counter-reset: subsection;
+}
+h3::before {
+  counter-increment: subsection;
+  content: counter(section) "." counter(subsection) " ";
+}
+ol {
+  counter-reset: section;
+  list-style-type: none;
+}
+
+li::before {
+  counter-increment: section;
+  content: counters(section,".") " ";
+}
+
+div.bg{
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+@media only screen and (min-width:700px){
+	div.bg{
+		width:60%;
+	}
+}
+
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type=text]:focus {
+	background-color:#ddd;
+}
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+input.text2[type=text] {
+  width: 130px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-image: url('../i/searchicon.png');
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+ 
+input.text2[type=text]:focus {
+  width: 100%;
+}
+.overflow{
+	background-color:red;
+	width:150px;
+	height:100px;
+	overflow:auto;/*visible/scroll/auto/hidden*/
+}
+textarea {
+  width: 100%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  resize: none;
+}

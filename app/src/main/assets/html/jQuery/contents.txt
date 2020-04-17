@@ -1,0 +1,8 @@
+<h3>jQuery AJAX 是个非常棒的功能！</h3>
+<p>这是段落的一些文本。通过jQuery load() 方法加载显示的</p>
+<p id="p_exp">语法：<code>$(selector).load(URL,data,callback);</code></p>
+<ul style="color:red;"> callback 参数
+	<li>responseTxt - 包含调用成功时的结果内容</li>
+	<li>statusTXT - 包含调用的状态</li>
+	<li>xhr - 包含 XMLHttpRequest 对象</li>
+</ul>

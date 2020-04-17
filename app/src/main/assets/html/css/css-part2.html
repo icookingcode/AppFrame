@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>CSS样式学习二</title>
+    <link href="style-part2.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<p>这是一段话，位于div元素前的第二个 p 元素</p>
+<p>这是一段话，位于div元素前的第一个 p 元素</p>
+<div class="selector">
+    <h2>CSS组合选择器</h2>
+    四种组合方式
+    <ul>
+        <li>后代选择器(以空格分隔)</li>
+        <li>子元素选择器(以大于号分隔）</li>
+        <li>相邻兄弟选择器（以加号分隔）</li>
+        <li>普通兄弟选择器（以破折号分隔）</li>
+    </ul>
+    <b><p>这是一段话，in div,不是直接子元素</p></b>
+    <p>这是一段话，in div</p>
+</div>
+<p>这是一段话，位于div元素后的第一个 p 元素</p>
+<p>这是一段话，位于div元素后的第二个 p 元素</p>
+<b><p>这是一段话，位于div元素后的第三个 p 元素,与第二个p元素不相邻</p></b>
+<p>与第二个p 隔了一个标签</p>
+<h2><abbr title="Pseudo-classes">伪类</abbr></h2>
+<ul>
+    <li> 语法：<code>selector:pseudo-class {property:value;}</code></li>
+    <li> CSS类的语法：<code>selector.class:pseudo-class {property:value;}</code></li>
+</ul>
+<a class="two" href="https://www.baidu.com" target="_blank">百度</a><br>
+<a class="two" href="http://www.iciba.com/" target="_blank">金山词霸</a><br>
+<a class="two" href="http://tool.chinaz.com/Tools/urlencode.aspx" target="_blank">站长工具</a>
+<br>
+<div>
+    <b>第一个b元素<i>第一个i</i><i>第二个i</i> </b></div>
+<q lang="no">this is code </q>
+<form method="get">
+    First name: <input name="fname" type="text"/><br>
+    Last name: <input name="lname" type="text"/><br>
+    <input type="submit" value="提交"/></form>
+<h2>伪元素</h2>
+<h2>导航栏</h2>
+<ul class="none">
+    <li class="center vertial"><a class="active" href="#home">主页</a></li>
+    <li class="center vertial"><a href="#news">新闻</a></li>
+    <li class="center vertial"><a href="#contact">联系</a></li>
+    <li class="center vertial"><a href="#about">关于</a></li>
+</ul>
+<br>
+<ul class="none2">
+    <li class="inline "><a class="active" href="#home">主页</a></li>
+    <li class="inline "><a href="#news">新闻</a></li>
+    <li class="inline "><a href="#contact">联系</a></li>
+    <li class="inline "><a href="#about">关于</a></li>
+    <div class="dropdown">
+        <a class="no-decoration" class="dropbtn" href="#">下拉菜单</a>
+        <div class="dropdown-content">
+            <a href="#">链接 1</a>
+            <a href="#">链接 2</a>
+            <a href="#">链接 3</a>
+        </div>
+    </div>
+</ul>
+<br>
+<ul class="none3">
+    <li class="float"><a class="active" href="#home">主页</a></li>
+    <li class="float"><a href="#news">新闻</a></li>
+    <li class="float"><a href="#contact">联系</a></li>
+    <li class="float"><a href="#about">关于</a></li>
+</ul>
+
+<h2>下拉菜单</h2>
+
+<div class="dropdown container">
+    <button class="dropbtn">下拉菜单</button>
+    <div class="dropdown-content">
+        <p>谷超超</p>
+        <p>happygc@126.com</p>
+    </div>
+</div>
+
+<div class="dropdown container">
+    <button class="dropbtn">图片下拉</button>
+    <div class="dropdown-content">
+        <img height="160" src="../i/klematis_small.jpg" width="180"/>
+        <p class="desc">happygc@126.com</p>
+    </div>
+</div>
+
+<h2>CSS提示工具</h2>
+<div class="container tooltip">有提示信息
+    <span class="tooltiptext">这里是提示信息</span>
+</div>
+
+<div class="container tooltip">有提示信息
+    <span class="tooltiptext-top">这里是提示信息</span>
+</div>
+
+<h2>图片廊</h2>
+
+<div class="responsive">
+    <div class="img">
+        <a href="../i/demo1.jpg" target="_blank">
+            <img src="../i/demo1.jpg"></img></a>
+        <div class="desc">照片描述</div>
+    </div>
+</div>
+<div class="responsive">
+    <div class="img">
+        <a href="../i/demo1.jpg" target="_blank">
+            <img class="alph40" src="../i/demo2.jpg"></img></a>
+        <div class="desc">照片描述</div>
+    </div>
+</div>
+<div class="responsive">
+    <div class="img">
+        <a href="../i/demo1.jpg" target="_blank">
+            <img class="alph40" src="../i/demo1.jpg"></img></a>
+        <div class="desc">照片描述</div>
+    </div>
+</div>
+<div class="responsive">
+    <div class="img">
+        <a href="../i/demo1.jpg" target="_blank">
+            <img src="../i/demo2.jpg"></img></a>
+        <div class="desc">照片描述</div>
+    </div>
+</div>
+<h2>图像拼合技术</h2>
+<img src="../i/img_navsprites.gif">完整的图片</img>
+<img class="home" src="../i/img_trans.gif">一部分图片</img>
+<img class="next" src="../i/img_trans.gif">下一个</img>
+<img class="prev" src="../i/img_trans.gif">上一个</img>
+
+<h2>属性选择器</h2>
+<div class="container">
+    CSS 属性选择器 *=, |=, ^=, $=, *= 的区别<br>
+    "value 是完整单词" 类型的比较符号: ~=, |=<br>
+    "拼接字符串" 类型的比较符号: *=, ^=, $=<br>
+    <p abc="white" lang="en">这是一段话</p>
+    <p abc="red">这是一段话（红色背景）</p>
+    <p abc="white" lang="us">这是一段话</p>
+    <p abc="green white">这是一段话(绿色背景)</p>
+</div>
+<br>
+<a class="one" href="css-part3.html" target="_blank">下一节</a>
+<br>
+<br>
+
+</body>
+</html>

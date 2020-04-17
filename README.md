@@ -38,3 +38,6 @@ AsyncTask
 
 
 ## 360度全景图功能
+* OpenGL 实现
+* Google VR实现 
+* js+webview 实现

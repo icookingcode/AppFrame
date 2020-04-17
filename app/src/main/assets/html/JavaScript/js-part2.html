@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JS学习二</title>
+    <link href="./js-part2.css" rel="stylesheet" type="text/css">
+    <script src="js-part2.js"></script>
+</head>
+<body onload="checkCookies()">
+<h2>JavaScript:函数</h2>
+<ul>
+    <li>函数声明：
+        <code>function functionName(parameters) {执行的代码}</code>
+    </li>
+    <li>匿名函数：
+        <code>function (parameters){执行代码}</code> 可用变量存储
+    </li>
+    <li>构造函数：<code>new Function("a", "b", "return a * b");</code> 等价于匿名函数，需用变量存储</li>
+    <li>箭头函数：<code><br>(参数1, 参数2, …, 参数N) => { 函数声明 }<br> (参数1, 参数2, …, 参数N) => 表达式(单一)</code></li>
+    <li>自动调用函数：<code>(函数)()</code></li>
+</ul>
+<p id="demo1"></p>
+<p id="demo2"></p>
+<p id="demo3"></p>
+
+<h2>JavaScript:函数的调用</h2>
+<p id="demo4">0</p>
+<button onclick="addOne()" type="button">点我+1</button>
+<button onclick="resetCounter()" type="button">重置</button>
+<h2>JS HTML <abbr title="文档对象模型"><u>DOM</u></abbr></h2>
+<ul><b>查找HTML元素</b>
+    <li>通过 id 找到 HTML 元素 <code>var x=document.getElementById("demo");</code></li>
+    <li>通过标签名找到 HTML 元素<code>var y=x.getElementsByTagName("p");</code></li>
+    <li>通过类名找到 HTML 元素<code>var x=document.getElementsByClassName("demo");</code></li>
+</ul>
+
+<ul><b>DOM HTML</b>
+    <li>改变HTML内容 <code>document.getElementById(id).innerHTML=新的 HTML;</code></li>
+    <li>改变HTML属性<code>document.getElementById(id).attribute=新属性值;</code></li>
+    <li>通过类名找到 HTML 元素<code>var x=document.getElementsByClassName("demo");</code></li>
+</ul>
+<ul><b>DOM CSS</b>
+    <li>改变HTML样式 <code>document.getElementById(id).style.property=新样式;</code></li>
+    <li>使用事件 <code>document.getElementById(id).style.property=新样式;</code></li>
+    <li>使用 HTML DOM 来分配事件
+        <code>document.getElementById("myBtn").onclick=function(){displayDate()};</code></li>
+</ul>
+<p id="p1">这是一个文本。 这是一个文本。 这是一个文本。 这是一个文本。 这是一个文本。 这是一个文本。 这是一个文本。</p>
+<input onclick="document.getElementById('p1').style.display='none'" type="button" value="隐藏文本"/>
+<input onclick="document.getElementById('p1').style.display='block'" type="button" value="显示文本"/>
+<p>输入你的名字:<input id="fname" onchange="upperCase()" type="text"></p>
+<ul><b>DOM EventListener</b>
+    <li>addEventListener() 方法 <code>element.addEventListener(event, function, useCapture);</code>
+        <ul>
+            <li>第一个参数是事件的类型 (如 "click" 或 "mousedown").</li>
+            <li>第二个参数是事件触发后调用的函数.</li>
+            <li>第三个参数是个布尔值用于描述事件是冒泡还是捕获。该参数是可选的.</li>
+        </ul>
+    </li>
+
+    <li>removeEventListener() 方法 <code>element.removeEventListener(event, function);;</code></li>
+</ul>
+<button id="btn1">点我</button>
+<button id="btn2">点我</button>
+<p id="demo5"></p>
+<p id="demo6"></p>
+
+<ul><b>DOM 元素</b>
+    <li>创建新的HTML元素<code>var para = document.createElement("p");</code></li>
+    <li>创建新的HTML节点<code>var node = document.createTextNode("这是文本内容");</code></li>
+    <li>元素里添加内容<code>element.appendChild(obj);</code></li>
+    <li>元素里添加内容,将newObj添加到obj之前<code>element.insetBefore(newObj,obj);</code></li>
+    <li>元素里移除内容<code>element.removeChild(child);</code></li>
+    <li>元素里替换内容,将newObj替换child<code>element.replaceChild(newObj,child);</code></li>
+</ul>
+<ul><b>DOM Collection 和节点列表</b>
+    <li>Collection <code>var myCollection = document.getElementsByTagName("p");</code></li>
+    <li>NodeList <code>var myNodelist = document.querySelectorAll("p");</code></li>
+    <li>两者区别
+        <ul>
+            <li>HTMLCollection 元素可以通过 name，id 或索引来获取;NodeList 只能通过索引来获取。</li>
+            <li>HTMLCollection 是 HTML 元素的集合;NodeList 是一个文档节点的集合。</li>
+        </ul>
+    </li>
+</ul>
+<script>
+	/*自动执行函数*/
+	(function (){
+		document.getElementById("demo1").innerHTML = "这是自动调用函数执行的效果";
+	})()
+	
+	document.getElementById("demo2").innerHTML = "[3,45,12,35,56,23]中最大的是："+findMax(3,45,12,35,56,23);
+	document.getElementById("demo3").innerHTML = "[3,45,12,35,56,23]的和是："+sumAll(3,45,12,35,56,23);
+	/*使用 addEventListener() 方法在按钮中添加点击事件*/
+	document.getElementById("btn1").addEventListener("click",function(){alert("HelloWorld!");});
+	/*向同一个元素中添加多个事件句柄*/
+	document.getElementById("btn2").addEventListener("click",function(){document.getElementById("demo5").innerHTML += "点击了!<br>";});
+	document.getElementById("btn2").addEventListener("mouseover",function(){document.getElementById("demo5").innerHTML += "mouseover!<br>";});
+	document.getElementById("btn2").addEventListener("mouseout",function(){document.getElementById("demo5").innerHTML += "mouseout!<br>";});
+	/*向 Window 对象添加事件句柄*/
+	window.addEventListener("resize", function(){
+		document.getElementById("demo6").innerHTML +="窗口大小发生变化了";
+	});
+
+</script>
+</body>
+</html>

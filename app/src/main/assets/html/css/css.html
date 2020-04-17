@@ -1,0 +1,222 @@
+<!DOCTYPE HTML>
+<head>
+    <meta charset="utf-8">
+    <!-- <meta http-equiv="refresh" content="10"> -->
+    <title>CSS样式学习</title>
+    <!-- 外部样式 -->
+    <link href="mystyle.css" rel="stylesheet" type="text/css">
+    <!-- 内部样式 -->
+    <style type="text/css">
+
+    </style>
+</head>
+
+<body>
+<h1>Text-shadow 效果</h1>
+<div class="sticky">我是粘性定位!</div>
+<p>注意: IE/Edge 15 及更早 IE 版本不支持 sticky 属性。</p>
+<p>一棵树<img class="top" src="../JavaScript/img_tree.png" width="100" height="200"></p>
+<h2>CSS字体</h2>
+<p class="serif">这是一段Times New Roman</p>
+<p class="sansserif italic">这是一段Arial</p>
+<p class="oblique thick">class="oblique"</p>
+<p class="ext2">一条声明，指定了字体为 斜体、加粗、Georgia</p>
+<hr/>
+<h2>链接样式&&列表样式</h2>
+<ul class="pointer">
+    <li>a:link - 正常，未访问过的链接</li>
+    <li>a:visited - 用户已访问过的链接</li>
+    <li>a:hover - 当用户鼠标放在链接上时</li>
+    <li>a:active - 链接被点击的那一刻</li>
+</ul>
+<a class="one" href="https://www.baidu.com" target="_blank">去百度搜一搜</a>
+<ol class="lower-alpha">
+    <li>\</li>
+    <li>\</li>
+    <li>\</li>
+    <li>\</li>
+</ol>
+
+<hr/>
+<h2>表格样式</h2>
+<table>
+    <caption class="bottom">Table 1.1 Customers</caption>
+    <tr>
+        <th class="fixed-height">姓名</th>
+        <th class="fixed-height">性别</th>
+        <th class="fixed-height">年龄</th>
+    </tr>
+    <tr>
+        <td>Mr.Gu</td>
+        <td>male</td>
+        <td>28</td>
+    </tr>
+</table>
+<table>
+    <caption>Table 1.2 Customers</caption>
+    <tr>
+        <th class="wrap">姓名</th>
+        <th class="wrap">性别</th>
+        <th class="wrap">年龄</th>
+    </tr>
+    <tr>
+        <td class="bottom">Mr.Gu</td>
+        <td class="bottom">male</td>
+        <td class="bottom">28</td>
+    </tr>
+</table>
+<br>
+<table id="customers">
+    <tr>
+        <th>Company</th>
+        <th>Contact</th>
+        <th>Country</th>
+    </tr>
+    <tr>
+        <td>Alfreds Futterkiste</td>
+        <td>Maria Anders</td>
+        <td>Germany</td>
+    </tr>
+    <tr class="alt">
+        <td>Berglunds snabbköp</td>
+        <td>Christina Berglund</td>
+        <td>Sweden</td>
+    </tr>
+    <tr>
+        <td>Centro comercial Moctezuma</td>
+        <td>Francisco Chang</td>
+        <td>Mexico</td>
+    </tr>
+
+
+</table>
+
+<hr/>
+<h2><abbr title="BoxModel and Border">盒子模型 && 边框</abbr></h2>
+<ul class="pointer">
+    <li>Margin(外边距) - 清除边框外的区域，外边距是透明的。</li>
+    <li>Border(边框) - 围绕在内边距和内容外的边框。</li>
+    <li>Padding(内边距) - 清除内容周围的区域，内边距是透明的。</li>
+    <li>Content(内容) - 盒子的内容，显示文本和图像。</li>
+</ul>
+<div class="w300"></div>
+<div class="w220">
+    <p class="border-one">四面都有边框</p>
+    <p class="border-two">红色底部边框</p>
+    <p class="border-three">圆角边框</p>
+    <div class="border-four">
+        <p>左侧边框带宽度，颜色为蓝色</p>
+        <p class="border-five">左右和上下样式不一样</p>
+        <p class="border-six">一条语句声明边框</p>
+    </div>
+</div>
+
+<div class="w220">
+    <iframe src="https://www.runoob.com/css/css-border.html" width="100%"></iframe>
+</div>
+
+<div id="div-outline" style="clear:both">
+    <br>
+    <hr/>
+    <h2><abbr title="Outline">轮廓</abbr></h2>
+    <p class="outline-one">outline属性：设置轮廓（用法同border）</p>
+</div>
+<br>
+
+<hr/>
+<h2><abbr title="margin">外边距</abbr></h2>
+<div class="wrap-container">
+    <p class="margin">
+        测试外边距和内边距<br>
+        有一行，看看行间距
+    </p>
+</div>
+
+<hr/>
+<h2><abbr title="margin">分组选择器&&嵌套选择器</abbr></h2>
+<h3>分组选择器</h3>
+在样式表中有很多具有相同样式的元素。
+<code>
+<pre>
+	h1,h2,p
+	{
+		color:green;
+	}
+</pre>
+</code>
+<h3>嵌套选择器</h3>
+<ul class="pointer">
+    <li><code class="bgcolor">p{ }</code>: 为所有 p 元素指定一个样式。</li>
+    <li><code class="bgcolor">.marked{ }</code>: 为所有 class="marked" 的元素指定一个样式。</li>
+    <li><code class="bgcolor">.marked p{ }</code>: 为所有 class="marked" 元素内的 p 元素指定一个样式。</li>
+    <li><code class="bgcolor">p.marked{ }</code>: 为所有 class="marked" 的 p 元素指定一个样式。</li>
+</ul>
+
+<hr/>
+<h2><abbr title="Display and Visibility">显示&&可见性</abbr></h2>
+<div>
+    <img class="thumbnail" src="../i/klematis_small.jpg"></img>
+    <img class="thumbnail block" src="../i/klematis2_small.jpg"></img>
+    <img class="thumbnail" src="../i/klematis3_small.jpg"></img></div>
+<hr/>
+<h2><abbr title="Position">定位</abbr></h2>
+position属性的五个值
+<ul class="pointer">
+    <li>static</li>
+    <li>relative</li>
+    <li>fixed</li>
+    <li>absolute</li>
+    <li>sticky</li>
+</ul>
+<div class="static">
+    <h4>h4正常标题位置</h4>
+    <h4 class="pos_right">h4向右偏移相对位置</h4>
+    <h4 class="pos_abs">h4绝对定位</h4>
+</div>
+<p class="pos_fixed">我是固定位置的一段话。</p>
+
+<div>
+    <img class="clip-rect" src="../i/bd_logo.png" width="100" height="140"/>
+    <img style="margin-left:100px;" src="../i/w3css.gif" width="100" height="140"/>
+</div>
+<hr/>
+<h2><abbr title="float">浮动</abbr></h2>
+<div class="w420">
+    <h4 class="center">小熊打井</h6>
+        <img class="thumbnail float-left" src="../i/bear.jpg"/>
+        <p class="indent">
+            山上的小溪(xi)都断流了,大家都说那是因为伐木工人砍倒了太多的树木。小熊住在山上，想要喝水得走老远的山路,可它又不可能搬到别处去，于是想打一口井。有了井,便不愁没有水喝了。</p>
+        <p class="indent">打井可不是很快就能完成的事儿,小熊想找大伙儿一起挖。</p>
+        <p class="indent">
+            小熊首先找到山羊。山羊说:“我年纪大了，腰都快断了,挖不了。”小熊有点失望,接着去找了梅花鹿(lu)。梅花鹿道:“我刚生了几只小鹿，没时间。”小熊没有办法,又去找小白兔。小白兔道:“我天天到处跑，看见哪里有水便喝一点,不需要井。”小熊又找了小鸟、穿山甲、猕猴等朋友,它们都拒绝了。</p>
+        <p class="indent">虽然没有朋友愿意帮忙，小熊仍然不愿放弃:“我一个人挖吧，虽然慢,但总有挖好的一天!”</p>
+        <p class="indent">
+            独自挖井当然很辛苦,但是小熊不怕。它的手在挖土的过程中磨出了血泡，一碰就疼，但是它坚持了下来,血泡破了，变成了厚厚的茧(jin)。半年之后，井挖成了,小熊喝到了甘甜的井水，欣喜得流下了眼泪。</p>
+        <p class="indent">
+            小熊的朋友们听说后，纷纷跑过来看。它们远远望见井口竖起了一块牌子,便止步了,愤怒地说道:“回去回去，它还要收钱哩!”小鸟反驳道:“你们都没有看清楚上面写的是什么,怎么知道是小熊不让我们打水,要来打水必须交钱呢?”山羊道:“你飞得快，去看看写的什么。”小鸟很快又飞了回来，欣喜地说道:“大家快过去,上面的字是小熊写的，说我们都可以打水,都可以;打水!”</p>
+        <p class="indent">大伙儿忽然都感觉挪(nu6)不动脚，站在一起互相望着,脸一个比一个红。</p>
+</div>
+
+<div class="w420 relative ">
+    <h4>对齐</h4>
+    <ul>
+        <li>元素居中对齐：<code class="bgcolor">margin: auto;</code>//要水平居中对齐一个元素</li>
+        <li>文本居中对齐：<code class="bgcolor">text-align: center;</code>//文本在元素内居中对齐</li>
+        <li>图片居中对齐：<code class="bgcolor">display: block;margin: auto;</code></li>
+        <li>左右对齐：<code class="bgcolor">position: absolute;</code>//使用该属性来对齐元素</li>
+        <li>左右对齐：<code class="bgcolor">float: right;</code>//使用该属性来对齐元素</li>
+    </ul>
+    <div class="center-element">div元素居中</div>
+    <div class="center-text">文本居中</div>
+    <img class="thumbnail center" src="../i/bear.jpg"/>
+    <div class="right2">右对齐float:实现</div>
+    <div class="right">右对齐</div>
+</div>
+
+<br class="float-clear">
+<a class="one" href="css-part2.html" target="_blank">下一节</a>
+<br>
+<br>
+
+
+</body>

@@ -20,8 +20,11 @@ import butterknife.ButterKnife;
 public class ActivityView360JsWeb extends BaseActivity {
     @BindView(R.id.webview)
     WebView mWebview;
+    @BindView(R.id.webview2)
+    WebView mWebview2;
     private String url = "file:///android_asset/view.html";
-    private String url2 = "https://www.baidu.com/";
+    private String url2 = "file:///android_asset/html/JavaScript/01.first-script.html";
+//    private String url2 = "file:///android_asset/html/html_events.html";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +40,21 @@ public class ActivityView360JsWeb extends BaseActivity {
         WebSettings webSettings = mWebview.getSettings();
         webSettings.setJavaScriptEnabled(true);
         mWebview.setWebViewClient(new WebViewClient() {
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                return true;
+            }
+        });
+
+        mWebview2.loadUrl(url2);
+        WebSettings webSettings2 = mWebview2.getSettings();
+        //解决webview加载的网页上的按钮点击失效  以及有些图标显示不出来的问题
+        webSettings.setDomStorageEnabled(true);
+        webSettings.setBlockNetworkImage(false);//解决图片不显示
+        webSettings.setJavaScriptCanOpenWindowsAutomatically(true);
+        webSettings.setLoadsImagesAutomatically(true);
+        webSettings.setJavaScriptEnabled(true);
+        mWebview2.setWebViewClient(new WebViewClient() {
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
                 return true;

@@ -1,0 +1,18 @@
+@charset "utf-8";
+body
+{
+	background-image:url('paper.gif');
+	background-color:rgb(255,255,255);
+	margin:20px;
+}
+hr {color:sienna;}
+
+p{
+	font-family:"Times New Roman";
+	color:black;
+	font-size:14px;
+	text-align:left;
+}
+
+p.date {text-align:right;}
+p.main {text-align:justify;}
