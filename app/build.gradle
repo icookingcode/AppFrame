@@ -103,4 +103,14 @@ dependencies {
 
     //WorkManager
     implementation "android.arch.work:work-runtime:1.0.1"
+
+
+    //opengl 使用
+    implementation 'com.github.CN-ZPH:weibo360panorama:v1.0.1'
+
+    //Google VR
+    implementation 'com.google.vr:sdk-panowidget:1.80.0'
+
+    //腾讯x5
+    implementation 'com.tencent.tbs.tbssdk:sdk:43903'
 }

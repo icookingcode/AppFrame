@@ -6,6 +6,7 @@ import com.hnhy.framework.Configuration;
 import com.hnhy.framework.Engine;
 import com.hnhy.framework.frame.BaseApplication;
 import com.hnhy.framework.frame.SystemManager;
+import com.tencent.smtt.sdk.QbSdk;
 
 /**
  * Created by guc on 2019/7/15.
@@ -36,6 +37,23 @@ public class CustomApplication extends BaseApplication {
                 .build();
         Engine.createInstance(this, configuration);
         SystemManager.getInstance();
+        initX5();
+    }
+
+    private void initX5() {
+        QbSdk.PreInitCallback callback = new QbSdk.PreInitCallback() {
+            @Override
+            public void onCoreInitFinished() {
+//x5內核初始化完成的回调，为true表示x5内核加载成功，否则表示x5内核加载失败，会自动切换到系统内核。
+            }
+
+            @Override
+            public void onViewInitFinished(boolean b) {
+
+            }
+        };
+        //x5内核初始化接口
+        QbSdk.initX5Environment(getApplicationContext(), callback);
     }
 
     private void init() {

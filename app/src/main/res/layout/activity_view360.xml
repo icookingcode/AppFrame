@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".mvp.ui.activity.view360.ActivityView360">
+
+    <com.hnhy.epapp.mvp.ui.widget.ToolBar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:leftType="finish"
+        app:title="360度全景图功能" />
+
+    <Button
+        android:id="@+id/btn_opengl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="OpenGL ES 实现"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <Button
+        android:id="@+id/btn_google_vr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Google VR 实现"
+        app:layout_constraintTop_toBottomOf="@+id/btn_opengl" />
+
+    <Button
+        android:id="@+id/btn_js_web"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Js+Webview"
+        app:layout_constraintTop_toBottomOf="@+id/btn_google_vr" />
+
+</android.support.constraint.ConstraintLayout>

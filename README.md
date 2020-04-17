@@ -35,3 +35,6 @@ View.post()
 AsyncTask  
 
 ## vector 矢量图绘制
+
+
+## 360度全景图功能

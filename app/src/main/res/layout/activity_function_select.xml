@@ -115,6 +115,13 @@
                 android:layout_height="wrap_content"
                 android:text="RxJava"
                 android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btn_360view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="360度全景图功能"
+                android:textAllCaps="false" />
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 
